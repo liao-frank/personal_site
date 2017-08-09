@@ -1,38 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-	<strong>Title:</strong>
-	<%= @project.title %>
-</p>
-
-<p>
-	<strong>Subtitle:</strong>
-	<%= @project.subtitle %>
-</p>
-
-<p>
-	<strong>Snippet:</strong>
-	<%= @project.snippet %>
-</p>
-
-<p>
 	<strong>Description:</strong>
 	<%= @project.description %>
 </p>
 
 <p>
-	<strong>Dates:</strong>
-	<%= @project.dates %>
-</p>
-
-<p>
 	<strong>Collaboration:</strong>
 	<%= @project.collaboration %>
-</p>
-
-<p>
-	<strong>Cover url:</strong>
-	<%= @project.cover_url %>
 </p>
 
 <p>
@@ -45,58 +20,21 @@
 	<%= @project.visibility %>
 </p>
 
-<p>
-	<strong>Site link:</strong>
-	<%= @project.site_link %>
-</p>
-
-<p>
-	<strong>Github link:</strong>
-	<%= @project.github_link %>
-</p>
-
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>
 
 <div class="large-container" style="margin-bottom: 100px;">
-	<h1 class="project-title">A&M Chess Store</h1>
-	<h4 class="project-subtitle">
-		Ruby on Rails project (67-272)
-	</h4>
+	<h1 class="project-title"><%= @project.title %></h1>
+	<h4 class="project-subtitle"><%= @project.subtitle %></h4>
 	<div class="project-preface">
 		<div class="project-slides">
 			<img src="http://i.imgur.com/klHiCqE.png" style="width: 100%"/>
 		</div>
 		<div class="project-details">
 			<div class="details-main">
-				<div class="details-brand" style="background-image: url(http://i.imgur.com/klHiCqE.png);"></div>
-				<div class="details-snippet">
-					This is a sample snippet about the sample project. There are lots of cool things about this project! I think it's really great and interesting.<br/>
-					<br/>
-					Blah blah blah. Blah blah. Blah.
-					<div class="details-skills">
-						<h4>Skills</h4>
-						<div class="details-skill">
-							<div class="skill-image" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Ruby_logo.svg/2000px-Ruby_logo.svg.png)"></div>
-							<div class="skill-label">Ruby on Rails</div>
-						</div>
-						<div class="details-skill">
-							<div class="skill-image" style="background-image: url(http://i.imgur.com/8fwdKvF.png)"></div>
-							<div class="skill-label">HTML5</div>
-						</div>
-						<div class="details-skill">
-							<div class="skill-image" style="background-image: url(http://i.imgur.com/NgOEccb.png)"></div>
-							<div class="skill-label">Javascript</div>
-						</div>
-						<div class="details-skill">
-							<div class="skill-image" style="background-image: url(http://i.imgur.com/IrP3Fci.png)"></div>
-							<div class="skill-label">CSS3</div>
-						</div>
-						<div class="details-skill">
-							<div class="skill-image" style="background-image: url(https://foundationstacks.com/depot/images/yeti.svg)"></div>
-							<div class="skill-label">Foundations CSS</div>
-						</div>
-					</div>
+				<div class="details-brand" style="background-image: url(<%= discover_image("http://i.imgur.com/klHiCqE.png") %>);"></div>
+				<div class="details-snippet-and-skills">
+					<div class="details-snippet"><%= @project.snippet %></div>
 				</div>
 			</div>
 		</div>
@@ -105,17 +43,51 @@
 		<div class="project-description">
 		</div>
 		<div class="project-sidebar">
-			<div class="details-misc">
-				<h4>Github Link</h4>
-					<a href="https://github.com/liao-frank/A-M-Chess-Store" target="_blank">
-						github.com/liao-frank/A-M-Chess-Store
+			<div class="sidebar-details details-skills">
+				<h4>Skills</h4>
+				<div class="details-skill">
+					<div class="skill-image" style="background-image: url(http://findicons.com/files/icons/1607/ruby_on_rails/256/ror_logo.png)"></div>
+					<div class="skill-label">Ruby on Rails</div>
+				</div>
+				<div class="details-skill">
+					<div class="skill-image" style="background-image: url(http://i.imgur.com/8fwdKvF.png)"></div>
+					<div class="skill-label">HTML5</div>
+				</div>
+				<div class="details-skill">
+					<div class="skill-image" style="background-image: url(http://i.imgur.com/NgOEccb.png)"></div>
+					<div class="skill-label">Javascript</div>
+				</div>
+				<div class="details-skill">
+					<div class="skill-image" style="background-image: url(http://i.imgur.com/IrP3Fci.png)"></div>
+					<div class="skill-label">CSS3</div>
+				</div>
+				<div class="details-skill">
+					<div class="skill-image" style="background-image: url(https://foundationstacks.com/depot/images/yeti.svg)"></div>
+					<div class="skill-label">Foundations CSS</div>
+				</div>
+			</div>
+			<div class="sidebar-details details-misc">
+				<!-- GitHub Link -->
+				<% if @project.github_link %>
+					<h4>Github Link</h4>
+					<a href="<%= @project.github_link %>" target="_blank">
+						<div class="icon icon-12x12" style="background-image: url(<%= discover_image("icons/external_link_white.png") %>);"></div>
+						<%= clean_url(@project.github_link) %> LONG TEXT TEST
 					</a>
-				<h4>Project Link</h4>
-					<a href="https://gentle-brushlands-60542.herokuapp.com/" target="_blank">
-						gentle-brushlands-60542.herokuapp.com
+				<% end %>
+				<!-- Project Link -->
+				<% if @project.site_link %>
+					<h4>Project Link</h4>
+					<a href="<%= @project.site_link %>" target="_blank">
+						<div class="icon icon-12x12" style="background-image: url(<%= discover_image("icons/external_link_white.png") %>);"></div>
+						<%= clean_url(@project.site_link) %>
 					</a>
-				<h4>Project Dates</h4>
-					Spring 2017
+				<% end %>
+				<!-- Project Dates -->
+				<% if @project.dates %>
+					<h4>Project Dates</h4>
+					<%= @project.dates %>
+				<% end %>
 			</div>
 		</div>
 	</div>

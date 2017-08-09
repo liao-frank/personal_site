@@ -4,8 +4,10 @@ one:
   name: MyString
   img_url: MyString
   dev_link: MyString
+  category: MyString
 
 two:
   name: MyString
   img_url: MyString
   dev_link: MyString
+  category: MyString

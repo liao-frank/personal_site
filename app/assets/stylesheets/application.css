@@ -33,9 +33,11 @@ body {
 }
 a {
 	color: #fff;
+	-webkit-transition: filter 0.15s ease;
+	transition: filter 0.15s ease;
 } a:hover {
-	color: #aaa;
-	background-color: inherit;
+	-webkit-filter: brightness(0.7);
+	filter: brightness(0.7);
 }
 
 #wrapper {
@@ -44,6 +46,8 @@ a {
 }
 
 /* Structure */
+.full-height { height: 100%; }
+.full-width { width: 100%; }
 .full-container {
 	margin: 0 auto;
 	width: 100%;
@@ -117,6 +121,22 @@ a {
 	border-radius: 3px;
 
 	box-shadow: 2px 2px 3px rgba(0,0,0,0.28);
+}
+.icon {
+	display: inline-block;
+
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+} .icon-12x12 {
+	width: 12px;
+	height: 12px;
+} .icon-16x16 {
+	width: 16px;
+	height: 16px;
+} .icon-20x20 {
+	width: 20px;
+	height: 20px;
 }
 
 /* Functionality */
