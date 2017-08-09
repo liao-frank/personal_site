@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Project:</strong>
+  <%= @project_skill.project_id %>
+</p>
+
+<p>
+  <strong>Skill:</strong>
+  <%= @project_skill.skill_id %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @project_skill.description %>
+</p>
+
+<p>
+  <strong>Order:</strong>
+  <%= @project_skill.order %>
+</p>
+
+<%= link_to 'Edit', edit_project_skill_path(@project_skill) %> |
+<%= link_to 'Back', project_skills_path %>

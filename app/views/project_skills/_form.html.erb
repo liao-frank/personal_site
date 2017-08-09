@@ -1,0 +1,37 @@
+<%= form_with(model: project_skill, local: true) do |form| %>
+  <% if project_skill.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(project_skill.errors.count, "error") %> prohibited this project_skill from being saved:</h2>
+
+      <ul>
+      <% project_skill.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :project_id %>
+    <%= form.number_field :project_id, id: :project_skill_project_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :skill_id %>
+    <%= form.number_field :skill_id, id: :project_skill_skill_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :project_skill_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :order %>
+    <%= form.number_field :order, id: :project_skill_order %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

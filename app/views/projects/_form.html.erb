@@ -1,0 +1,72 @@
+<%= form_with(model: project, local: true) do |form| %>
+  <% if project.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+      <ul>
+      <% project.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :project_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :subtitle %>
+    <%= form.text_field :subtitle, id: :project_subtitle %>
+  </div>
+
+  <div class="field">
+    <%= form.label :snippet %>
+    <%= form.text_area :snippet, id: :project_snippet %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :project_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dates %>
+    <%= form.text_field :dates, id: :project_dates %>
+  </div>
+
+  <div class="field">
+    <%= form.label :collaboration %>
+    <%= form.text_field :collaboration, id: :project_collaboration %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cover_url %>
+    <%= form.text_field :cover_url, id: :project_cover_url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :order %>
+    <%= form.number_field :order, id: :project_order %>
+  </div>
+
+  <div class="field">
+    <%= form.label :visibility %>
+    <%= form.text_field :visibility, id: :project_visibility %>
+  </div>
+
+  <div class="field">
+    <%= form.label :site_link %>
+    <%= form.text_field :site_link, id: :project_site_link %>
+  </div>
+
+  <div class="field">
+    <%= form.label :github_link %>
+    <%= form.text_field :github_link, id: :project_github_link %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

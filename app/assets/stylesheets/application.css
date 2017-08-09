@@ -1,0 +1,141 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body {
+	margin: 0;
+
+	min-width: 100%;
+	min-height: 100%;
+
+	background-color: #242424;
+	color: #fff;
+
+	font-family: "Lato", "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
+	line-height: 1.5;
+	font-size: 15px;
+	font-weight: 400;
+}
+* {
+	-webkit-backface-visibility: hidden;
+}
+a {
+	color: #fff;
+} a:hover {
+	color: #aaa;
+	background-color: inherit;
+}
+
+#wrapper {
+	min-width: 100%;
+	min-height: 100%;
+}
+
+/* Structure */
+.full-container {
+	margin: 0 auto;
+	width: 100%;
+}
+.large-container {
+	margin: 0 auto;
+	width: 1000px;
+}
+.medium-container {
+	margin: 0 auto;
+	width: 750px;
+}
+.small-container {
+	margin: 0 auto;
+	width: 500px;
+}
+.row {
+	width: 100%;
+	display: inline-block;
+}
+.row-flex {
+	width: 100%;
+	display: flex;
+	display: -webkit-flex;
+}
+.col {
+	float: left;
+	min-height: 1px;
+}
+.col-flex {
+	-webkit-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+}
+.col-1-2 {		width: 50%;		}
+.col-1-3 {		width: 33.33%;	}
+.col-2-3 {		width: 66.66%;	}
+.col-1-6 {		width: 16.66%;	}
+.col-2-6 {		width: 33.33%;	}
+.col-3-6 {		width: 50%;		}
+.col-4-6 {		width: 66.66%;	}
+.col-5-6 {		width: 83.33%;	}
+.col-1-12 {		width: 8.33%;	}
+.col-2-12 {		width: 16.66%;	}
+.col-3-12 {		width: 25%;		}
+.col-4-12 {		width: 33.33%;	}
+.col-5-12 {		width: 41.66%;	}
+.col-6-12 {		width: 50%;		}
+.col-7-12 {		width: 58.33%;	}
+.col-8-12 {		width: 66.66%;	}
+.col-9-12 {		width: 75%;		}
+.col-10-12 {	width: 83.33%;	}
+.col-11-12 {	width: 91.66%;	}
+
+.left {		float: left;	}
+.right {	float: right;	}
+.center {	margin: 0 auto;	}
+.content-center {	text-align: center;		}
+.content-right {	text-align: right;		}
+
+/* Styles */
+.grey-text {
+	color: #999;
+}
+.grey {
+	background-color: #999;
+}
+.section {
+	background-color: #2f2f31;
+	border: 5px solid #2f2f31;
+	border-radius: 3px;
+
+	box-shadow: 2px 2px 3px rgba(0,0,0,0.28);
+}
+
+/* Functionality */
+.has-tooltip {
+	-webkit-transition: filter 0.15s ease;
+	transition: filter 0.15s ease;
+}
+.has-tooltip:hover {
+	/*-webkit-filter: brightness(0.7);*/
+	/*filter: brightness(0.7);*/
+}
+.tooltip {
+	color: grey;
+	display: none;
+	-webkit-transition: filter 0.15s ease;
+	transition: filter 0.15s ease;
+}
+.has-tooltip:hover .tooltip {
+	display: block;
+	-webkit-filter: brightness(1.429);
+	filter: brightness(1.429);
+}
