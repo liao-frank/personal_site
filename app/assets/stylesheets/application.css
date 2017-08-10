@@ -13,9 +13,6 @@
  *= require_tree .
  *= require_self
  */
- html {
-	height: 100% !important;
- }
 body {
 	margin: 0;
 
@@ -29,10 +26,12 @@ body {
 }
 #wrapper {
 	padding: 51px 0 27px 0;
-
 	min-height: 100%;
 
 	position: relative;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
 }
 * {
 	-webkit-backface-visibility: hidden;
