@@ -1,10 +1,10 @@
 class HomeController < ApplicationController
-	def home
-	end
+  def home
+  end
 
-	def about
-	end
+  def about
+  end
 
-	def sandbox
-	end
+  def sandbox
+  end
 end
