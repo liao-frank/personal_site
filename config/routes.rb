@@ -1,14 +1,4 @@
 Rails.application.routes.draw do
-  get 'home/home'
-
-  get 'home/about'
-
-  get 'home/sandbox'
-
-  get 'homehome/about'
-
-  get 'homehome/sandbox'
-
 	resources :project_skills
 	resources :project_images
 	resources :skills

@@ -1,9 +1,106 @@
-<div class="home-intro">
-	<div class="name">Frank Liao</div>
-	<div class="title">Full Stack Developer / Designer</div>
+<style>
+	#wrapper {
+		height: 100%;
+		overflow: hidden;
+	}
+	#navbar .navlinks a {
+		color: #8a8a8a;
+	}
+</style>
+<div class="home-content">
+	<div class="i-am text-fill">
+		<span>Hello, I am an</span>
+	</div>
+	<div class="home-titles">
+		<div class="name title">
+			<div class="line text-fill">
+				<span>Frank</span>
+			</div>
+			<div class="line text-fill">
+				<span>Liao</span>
+			</div>
+		</div>
+		<div class="tech title">
+			<div class="line text-fill one">
+				<span onmouseenter="randimateTechTitle();">Tech</span>
+			</div>
+			<div class="line text-fill two">
+				<span onmouseenter="randimateTechTitle();">Lover</span>
+			</div>
+		</div>
+		<div class="creative title">
+			<div class="line text-fill">
+				<span data-shadow="Creative">Creative</span>
+			</div>
+			<div class="line text-fill">
+				<span data-shadow="Mind">Mind</span>
+			</div>
+		</div>
+		<div class="avid title">
+			<div class="line text-fill">
+				<span>Avid</span>
+			</div>
+			<div class="line text-fill">
+				<span>Learner</span>
+			</div>
+		</div>
+	</div>
+	<div class="home-details">
+		<div class="name details">
+			I'm a full stack <span class="highlight">developer</span> and digital <span class="highlight">designer</span>.
+		</div>
+		<div class="tech details">
+			New technologies mean <span class="highlight">better solutions</span>. I'm always trying to stay at the forefront of a <span class="highlight">modern world</span>.
+		</div>
+		<div class="creative details">
+			I'm an <span class="highlight">outside-of-the-box</span> thinker.  Count on me to solve problems with a <span class="highlight">unique and fresh</span> idea!
+		</div>
+		<div class="avid details">
+			Discovery is my <span class="highlight">passion</span>. I'm always ready to acquire new skills and <span class="highlight">learn from others</span>.
+		</div>
+	</div>
 </div>
-<div class="i-am" style="display: none;">
-	I am a <div class="title">Tech Enthusiast</div>
-	<div class="details"></div>
+<div class="home-navigation">
+	<div class="name switch">
+		<div class="block"></div>
+		<div class="icon"></div>
+	</div>
+	<div class="tech switch">
+		<div class="block"></div>
+		<div class="icon"></div>
+	</div>
+	<div class="creative switch">
+		<div class="block"></div>
+		<div class="icon"></div>
+	</div>
+	<div class="avid switch">
+		<div class="block"></div>
+		<div class="icon">
+			<div class="heart"></div>
+		</div>
+	</div>
 </div>
-<div class="home-navigation"></div>
+<script>
+	maxFillText('.text-fill');
+	switchToHome('.name');
+	$('.name.switch').on('touchstart click', function(e) {
+		e.preventDefault();
+		switchToHome('.name');
+
+	});
+	$('.tech.switch').on('touchstart click', function(e) {
+		e.preventDefault();
+		switchToHome('.tech');
+
+	});
+	$('.creative.switch').on('touchstart click', function(e) {
+		e.preventDefault();
+		switchToHome('.creative');
+
+	});
+	$('.avid.switch').on('touchstart click', function(e) {
+		e.preventDefault();
+		switchToHome('.avid');
+
+	});
+</script>

@@ -1,3 +1,436 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$short-transition: 0.15s ease;
+$medium-transition: 0.4s ease;
+$grey: #8d8d8d;
+$green: #47cf73;
+$blue: #0ebeff;
+$red: #ff4646;
+
+.home-content {
+	text-transform: uppercase;
+	font-weight: bold;
+	line-height: 1;
+	text-align: center;
+
+	height: 50%;
+	position: relative;
+	top: 20%;
+
+	cursor: default;
+}
+.home-content .i-am {
+	margin: 0 auto;
+	overflow: hidden;
+
+	height: 10%;
+
+	transition: width $medium-transition;
+	-webkit-transition: width $medium-transition;
+} .home-content .i-am span {
+	display: inline-block;
+	white-space: nowrap;
+
+	transition: transform $medium-transition;
+	-webkit-transition: transform $medium-transition;
+}
+
+.home-content .home-titles {
+	width: 100%;
+	height: 60%;
+	margin: 10px 0;
+
+	position: relative;
+}
+.home-content .title {
+	visibility: hidden;
+	opacity: 0;
+
+	-ms-transform: rotate(7deg) translate(20px, -20px); /* IE 9 */
+	-webkit-transform: rotate(7deg) translate(20px, -20px); /* Chrome, Safari, Opera */
+	transform: rotate(7deg) translate(20px, -20px);
+
+	position: absolute;
+	width: 100%;
+	height: 100%;
+
+	-webkit-transition: opacity $medium-transition;
+	transition: opacity $medium-transition;
+} .home-content .title .line {
+	height: 50%;
+} .home-content .title.visible {
+	visibility: visible;
+	opacity: 1;
+
+	-ms-transform: none; /* IE 9 */
+	-webkit-transform: none; /* Chrome, Safari, Opera */
+	transform: none;
+
+	-webkit-transition: all $medium-transition;
+	transition: all $medium-transition;
+}
+.home-content .name.title {
+	color: $grey;
+	text-shadow: 5px 5px rgba(0,0,0,0.28);
+} .home-content .tech.title {
+	color: $green;
+	text-shadow: 4px 4px rgba(78, 154, 108, 0.28);
+} .home-content .creative.title {
+	color: $blue;
+	text-shadow: 3px 3px rgb(36, 36, 36); /*same color as background*/
+} .home-content .avid.title {
+	color: $red;
+	text-shadow: 4px 4px rgba(154, 78, 78, 0.28);
+}
+
+.home-content .home-details {
+	position: relative;
+	width: 40%;
+	height: 30%;
+
+	margin: 0 auto;
+}
+.home-content .details {
+	position: absolute;
+
+	visibility: hidden;
+	opacity: 0;
+
+	width: 100%;
+	height: 100%;	
+	
+	line-height: 1.3;
+	font-size: 20px;
+
+	-webkit-transition: opacity $medium-transition;
+	transition: opacity $medium-transition;
+} .home-content .details.visible {
+	visibility: visible;
+	opacity: 1;
+}
+.home-content .name.details {
+} .home-content .name.details .highlight {
+	color: $grey;
+	text-shadow: 2px 2px rgba(0,0,0,0.28);
+} .home-content .tech.details .highlight {
+	color: $green;
+	text-shadow: 2px 2px rgba(78, 154, 108, 0.28);
+} .home-content .creative.details .highlight {
+	color: $blue;
+	text-shadow: 2px 2px rgba(78, 130, 154, 0.28);
+} .home-content .avid.details .highlight {
+	color: $red;;
+	text-shadow: 2px 2px rgba(154, 78, 78, 0.28);
+}
+
+/* Creative Title */
+.home-content .creative.title span {
+	position: relative;
+}
+.home-content .creative.title span:after {
+	content: attr(data-shadow);
+	position: absolute;
+	top: .06em; left: .06em;
+	z-index: -1;
+	text-shadow: none;
+	background-image:
+		linear-gradient(
+			45deg,
+			transparent 45%,
+			hsla(48,20%,90%,1) 45%,
+			hsla(48,20%,90%,1) 55%,
+			transparent 0
+		);
+	background-size: .05em .05em;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+
+	-webkit-animation: shad-anim 30s linear infinite; /* Safari 4+ */
+	-moz-animation:    shad-anim 30s linear infinite; /* Fx 5+ */
+	-o-animation:      shad-anim 30s linear infinite; /* Opera 12+ */
+	animation:         shad-anim 30s linear infinite; /* IE 10+, Fx 29+ */
+}
+
+@-webkit-keyframes shad-anim {
+	0% {background-position: 0 0}
+	0% {background-position: 100% -100%}
+}
+@-moz-keyframes shad-anim {
+	0% {background-position: 0 0}
+	0% {background-position: 100% -100%}
+}
+@-o-keyframes shad-anim {
+	0% {background-position: 0 0}
+	0% {background-position: 100% -100%}
+}
+@keyframes shad-anim {
+	0% {background-position: 0 0}
+	0% {background-position: 100% -100%}
+}
+
+/* IE remove and add static text shadow */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+	.home-content .creative.title span {
+		text-shadow: 3px 3px rgb(36, 36, 36), .06em .06em #fff;
+	}
+	.home-content .creative.title span:after{
+		content: none;
+		background-image: none;
+	}
+}
+@supports (-ms-accelerator:true) {
+	.home-content .creative.title span {
+		text-shadow: 3px 3px rgb(36, 36, 36), .06em .06em #fff;
+	}
+	.home-content .creative.title span:after{
+		content: none;
+		background-image: none;
+	}
+}
+
+/* Avid Title */
+.home-content .avid.title {
+	-webkit-animation: heartbeat 3s infinite; /* Safari 4+ */
+	-moz-animation:    heartbeat 3s infinite; /* Fx 5+ */
+	-o-animation:      heartbeat 3s infinite; /* Opera 12+ */
+	animation:         heartbeat 3s infinite; /* IE 10+, Fx 29+ */
+}
+
+/* Navigation */
+.home-navigation {
+	position: relative;
+	top: 30%; /*5 + .home-content top*/
+	margin: 0 auto;
+
+	width: 210px;
+	height: 32px;
+
+	user-select: none;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-o-user-select: none;
+}
+.home-navigation .switch {
+	position: absolute;
+	/* width == height */
+	width: 32px;
+	height: 100%;
+
+	-ms-transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+
+	cursor: pointer;
+} .home-navigation .switch.active { cursor: default; } 
+.home-navigation .tech.switch {
+	left: 33.33%;
+} .home-navigation .creative.switch {
+	left: 66.66%;
+} .home-navigation .avid.switch {
+	left: 100%;
+}
+.home-navigation .switch .block {
+	position: absolute;
+
+	width: 100%;
+	height: 100%;
+
+	background-color: #fff;
+	border-radius: 3px;
+	-ms-transform: scale(0.531);
+	-webkit-transform: scale(0.531);
+	transform: scale(0.531);
+
+	transition: all $short-transition;
+	-webkit-transition: all $short-transition;
+} .home-navigation .switch:hover .block {
+	-ms-transform: scale(0.625);
+	-webkit-transform: scale(0.625);
+	transform: scale(0.625);
+} .home-navigation .name.switch:hover .block {
+	background-color: $grey;
+} .home-navigation .tech.switch:hover .block {
+	background-color: $green;
+} .home-navigation .creative.switch:hover .block {
+	background-color: $blue;
+} .home-navigation .avid.switch:hover .block {
+	background-color: $red;
+} .home-navigation .active.switch .block {
+	visibility: hidden;
+	opacity: 0;
+	-ms-transform: scale(0);
+	-webkit-transform: scale(0);
+	transform: scale(0);
+}
+.home-navigation .switch .icon {
+	position: absolute;
+
+	width: 100%;
+	height: 100%;
+
+	visibility: hidden;
+	opacity: 0;
+	-ms-transform: scale(0);
+	-webkit-transform: scale(0);
+	transform: scale(0);
+
+	transition: all $medium-transition;
+	-webkit-transition: all $medium-transition;
+} .home-navigation .active.switch .icon {
+	visibility: visible;
+	opacity: 1;
+
+	background-position: center center;
+	background-size: cover;
+
+	-ms-transform: scale(1);
+	-webkit-transform: scale(1);
+	transform: scale(1);
+} .home-navigation .name.switch .icon{
+	background-image: url(asset-path('icons/profile_grey.png'));
+} .home-navigation .tech.switch .icon{
+	background-image: url(asset-path('icons/desktop_green.png'));
+} .home-navigation .creative.switch .icon{
+	background-image: url(asset-path('icons/pencil_blue.png'));
+}
+
+.heart {
+	background-image: url(asset-path('icons/heart_red.png'));
+	background-position: center center;
+	background-size: cover;
+
+	width: 100%;
+	height: 100%;
+
+	-webkit-animation: heartbeat-big 3s infinite; /* Safari 4+ */
+	-moz-animation:    heartbeat-big 3s infinite; /* Fx 5+ */
+	-o-animation:      heartbeat-big 3s infinite; /* Opera 12+ */
+	animation:         heartbeat-big 3s infinite; /* IE 10+, Fx 29+ */
+}
+
+
+/*Heartbeat Animation*/
+@-webkit-keyframes heartbeat {
+	0% { -webkit-transform: scale(1.0488); }
+	4% { -webkit-transform: scale(1);  }
+	8% { -webkit-transform: scale(1.0954); }
+	13% { -webkit-transform: scale(1); }
+	94% { -webkit-transform: scale(1); }
+	100%  { -webkit-transform: scale(1.0488); }
+}
+@-moz-keyframes heartbeat {
+	0% { -webkit-transform: scale(1.0488); }
+	4% { -webkit-transform: scale(1);  }
+	8% { -webkit-transform: scale(1.0954); }
+	13% { -webkit-transform: scale(1); }
+	94% { -webkit-transform: scale(1); }
+	100%  { -webkit-transform: scale(1.0488); }
+}
+@-o-keyframes heartbeat {
+	0% { -webkit-transform: scale(1.0488); }
+	4% { -webkit-transform: scale(1);  }
+	8% { -webkit-transform: scale(1.0954); }
+	13% { -webkit-transform: scale(1); }
+	94% { -webkit-transform: scale(1); }
+	100%  { -webkit-transform: scale(1.0488); }
+}
+@keyframes heartbeat {
+	0% { -webkit-transform: scale(1.0488); }
+	4% { -webkit-transform: scale(1);  }
+	8% { -webkit-transform: scale(1.0954); }
+	13% { -webkit-transform: scale(1); }
+	94% { -webkit-transform: scale(1); }
+	100%  { -webkit-transform: scale(1.0488); }
+}
+/* Big Heartbeat Animation*/
+@-webkit-keyframes heartbeat-big {
+	0% { -webkit-transform: scale(1.0954); }
+	4% { -webkit-transform: scale(1);  }
+	8% { -webkit-transform: scale(1.1832); }
+	13% { -webkit-transform: scale(1); }
+	94% { -webkit-transform: scale(1); }
+	100%  { -webkit-transform: scale(1.0954); }
+}
+@-moz-keyframes heartbeat-big {
+	0% { -webkit-transform: scale(1.0954); }
+	4% { -webkit-transform: scale(1);  }
+	8% { -webkit-transform: scale(1.1832); }
+	13% { -webkit-transform: scale(1); }
+	94% { -webkit-transform: scale(1); }
+	100%  { -webkit-transform: scale(1.0954); }
+}
+@-o-keyframes heartbeat-big {
+	0% { -webkit-transform: scale(1.0954); }
+	4% { -webkit-transform: scale(1);  }
+	8% { -webkit-transform: scale(1.1832); }
+	13% { -webkit-transform: scale(1); }
+	94% { -webkit-transform: scale(1); }
+	100%  { -webkit-transform: scale(1.0954); }
+}
+@keyframes heartbeat-big {
+	0% { -webkit-transform: scale(1.0954); }
+	4% { -webkit-transform: scale(1);  }
+	8% { -webkit-transform: scale(1.1832); }
+	13% { -webkit-transform: scale(1); }
+	94% { -webkit-transform: scale(1); }
+	100%  { -webkit-transform: scale(1.0954); }
+}
+/* Responsive */
+/* Desktop */
+@media only screen and (min-width: 1500px) {
+	.home-content .home-details {
+		width: 33.33%;
+		max-width: 400px;
+	}
+}
+/* Mobile */
+@media only screen and (max-width: 1024px) and (min-height: 1024px) {
+	.home-content .details {
+		font-size: 28px;
+	}
+}
+@media only screen and (max-width: 768px) {
+	.home-content .home-details {
+		width: 70%;
+	}
+}
+@media only screen and (max-width: 500px) {
+	/*.home-content .home-titles {
+		height: 50%;
+	}*/
+	.home-content .details {
+		font-size: 18px;
+	}
+	.home-navigation {
+		top: 40%;
+	}
+	#footer {
+		visibility: hidden;
+	}
+	.home-navigation .switch:hover .block {
+		background-color: #fff !important;
+	}
+}
+@media only screen and (max-width: 400px) {
+	.home-content .home-details {
+		width: 80%;
+	}
+}
+@media only screen and (max-width: 400px) and (min-height: 650px) {
+	.home-content .home-titles {
+		height: 50%;
+	}
+}
+@media only screen and (max-height: 550px) {
+	.home-content .home-titles {
+		height: 60%;
+	}
+	.home-content .details {
+		font-size: 16px;
+	}
+	.home-content {
+		top: 15%;
+	}
+}
