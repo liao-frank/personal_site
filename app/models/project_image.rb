@@ -3,8 +3,8 @@ class ProjectImage < ApplicationRecord
 	belongs_to :project
 
 	# Scopes
-	scope :for_project, ->(project_id) { nil } # TODO skills for a project id
-	scope :ordered, -> { nil } # TODO projects ordered by :order
+	scope :for_project, ->(project_id) { where(id: project_id) } # TODO skills for a project id
+	scope :ordered, -> { order(order: :asc) } # TODO projects ordered by :order
 
 	# Validations
 	validates_numericality_of :order, only_integer: true, greater_than_or_equal_to: 0

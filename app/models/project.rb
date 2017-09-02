@@ -8,7 +8,7 @@ class Project < ApplicationRecord
 	scope :chronological, -> { nil } # TODO projects ordered by :created_at
 	scope :for_user, -> { nil } # TODO projects for a given user
 	scope :for_skill, ->(skill_name) { nil } # TODO projects for a given skill name
-	scope :ordered, -> { nil } # TODO projects ordered by :order
+	scope :ordered, -> { order(order: :asc) } # TODO projects ordered by :order
 
 	# Validations
 	validates :title, presence: true

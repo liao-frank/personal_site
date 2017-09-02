@@ -16,8 +16,8 @@
   <tbody>
     <% @project_skills.each do |project_skill| %>
       <tr>
-        <td><%= project_skill.project_id %></td>
-        <td><%= project_skill.skill_id %></td>
+        <td><%= Project.find_by_id(project_skill.project_id).title %></td>
+        <td><%= Skill.find_by_id(project_skill.skill_id).name %></td>
         <td><%= project_skill.description %></td>
         <td><%= project_skill.order %></td>
         <td><%= link_to 'Show', project_skill %></td>

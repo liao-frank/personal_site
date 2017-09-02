@@ -2,16 +2,43 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $short-transition: 0.15s ease;
-$secondary-text-color: #d8d8d8;
+$secondary-text-color: #f3f3f3;
 $primary-background-color: #242424;
 $secondary-background-color: #2f2f31;
 $on-hover-darken: brightness(0.7);
 
+.project-list {
+	width: 70%;
+	max-width: 1250px;
+
+	margin: 0 auto;
+} .project-list .project-block {
+	float: left;
+	width: 33.33%;
+	min-width: 340px;
+} 
+@media only screen and (max-width: 1000px) {
+	.project-list {
+		width: 85%;
+	} .project-list .project-block {
+		width: 50%;
+	} 
+}
+@media only screen and (max-width: 515px) {
+	.project-list {
+		width: 95%;
+	} .project-list .project-block {
+		width: 100%;
+	} 
+}
 
 /* Project Card */
 .project-card {
-	width: 408px;
-	height: 305px;
+	position: relative;
+	margin: 0 auto;
+	width: 85%;
+	padding-top: 63.542%; /* 305 / 408 * width */
+	height: 0;
 	background-color: $secondary-background-color;
 	border: 5px solid $secondary-background-color;
 	border-radius: 3px;
@@ -21,6 +48,12 @@ $on-hover-darken: brightness(0.7);
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
+} .project-card .project-contents {
+	width: 100%;
+	height: 100%;
+
+	position: absolute;
+	top: 0;
 }
 
 .project-cover {
@@ -42,6 +75,8 @@ $on-hover-darken: brightness(0.7);
 	cursor: pointer;
 }
 .project-cover .cover-overlay {
+	white-space: pre-line;
+
 	position: absolute;
     top: 0;
     left: 0;
@@ -85,7 +120,7 @@ $on-hover-darken: brightness(0.7);
 	float: left;
 } .project-meta .meta-left {
 	width: 68%;
-} .project-meta .meta-right {
+}.project-meta .meta-right {
 	width: 32%;
 	/* 68 + 32 = 100 */
 }
@@ -99,12 +134,7 @@ $on-hover-darken: brightness(0.7);
 
 	text-overflow: ellipsis;
 	overflow: hidden;
-
-	-webkit-transition: filter $short-transition;
-	transition: filter $short-transition;
 } .project-meta .meta-title:hover {
-	-webkit-filter: $on-hover-darken;
-	filter: $on-hover-darken;
 } .project-meta .meta-title {
 	top: 33.33%;
 	-webkit-transform: translateY(-50%);
@@ -127,13 +157,19 @@ $on-hover-darken: brightness(0.7);
 	transform: translateY(-50%);
 }
 .project-meta .meta-skills .meta-skill {
-	width: 28px;
-	height: 28px;
+	position: relative;
+
+	width: 25.33%;
+	padding-top: 25.33%;
+	height: 0;
 
 	float: left;
 } .project-meta .meta-skills .meta-skill:not(:last-child) {
 	margin-right: 12%;
 } .project-meta .meta-skills .meta-skill .skill-image {
+	position: absolute;
+	top: 0;
+	left: 0;
 	height: 100%;
 	width: 100%;
 
@@ -150,7 +186,7 @@ $on-hover-darken: brightness(0.7);
 } .project-meta .meta-skills .meta-skill .skill-label {
 	position: absolute;
 	visibility: hidden;
-	background: rgba(0, 0, 0, 0.4);
+	background: rgba(0, 0, 0, 0.8);
 	border-radius: 3px;
 
     padding: 1px 5px;
@@ -178,7 +214,7 @@ $on-hover-darken: brightness(0.7);
 	display: flex;
 	display: -webkit-flex;
 
-	margin-bottom: 20px;
+	margin-bottom: 18px;
 }
 
 .project-preface .project-slides {
@@ -189,6 +225,13 @@ $on-hover-darken: brightness(0.7);
 	margin-right: 1.66%;
 
 	overflow: hidden;
+
+	box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.28);
+	border-radius: 3px;
+
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 .project-slides img {
 	/*-ms-transform: translateY(-50%);
@@ -311,7 +354,7 @@ $on-hover-darken: brightness(0.7);
 .sidebar-details {
 	position: relative;
 	padding: 15px 20px;
-	margin-bottom: 20px;
+	margin-bottom: 18px;
 
 	width: 100%;
 
@@ -337,4 +380,48 @@ $on-hover-darken: brightness(0.7);
 } .details-misc a .icon {
 	position: relative;
 	top: 1px;
+}
+
+/* Slideshow */
+.project-postface .slide-block {
+	float: left;
+	position: relative;
+	width: 25%;
+
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 9px;
+	bottom: 10px; /*approx == padding*/
+}
+.project-postface .slide-preview {
+	position: relative;
+
+	width: 100%;
+	padding-top: 75%; 
+	height: 0;
+} .project-postface .slide-preview.active {
+	border: 5px solid $secondary-background-color;
+	bottom: 5px;
+	right: 5px;
+	border-radius: 3px;
+
+	box-shadow: 2px 2px 3px rgba(0,0,0,0.28);
+} .project-postface .slide-preview:not(.active):hover {
+	border: 5px solid $secondary-background-color;
+	bottom: 5px;
+	right: 5px;
+	border-radius: 3px;
+}
+.project-postface .slide-preview .slide-preview-image {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	height: 100%;
+
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
 }

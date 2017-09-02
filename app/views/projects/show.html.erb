@@ -1,35 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-	<strong>Description:</strong>
-	<%= @project.description %>
-</p>
-
-<p>
-	<strong>Collaboration:</strong>
-	<%= @project.collaboration %>
-</p>
-
-<p>
-	<strong>Order:</strong>
-	<%= @project.order %>
-</p>
-
-<p>
-	<strong>Visibility:</strong>
-	<%= @project.visibility %>
-</p>
-
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
-
 <div class="large-container" style="margin-bottom: 100px;">
 	<h1 class="project-title"><%= @project.title %></h1>
 	<h4 class="project-subtitle"><%= @project.subtitle %></h4>
 	<div class="project-preface">
-		<div class="project-slides">
-			<img src="http://i.imgur.com/klHiCqE.png" style="width: 100%"/>
-		</div>
+		<div class="project-slides" style="background-image: url(<%= discover_image("http://i.imgur.com/klHiCqE.png") %>);"></div>
 		<div class="project-details">
 			<div class="details-main">
 				<div class="details-brand" style="background-image: url(<%= discover_image("http://i.imgur.com/klHiCqE.png") %>);"></div>
@@ -41,30 +16,37 @@
 	</div>
 	<div class="project-postface">
 		<div class="project-description">
+				<div class="slide-block">
+					<div class="slide-preview active" onClick="switchSlides(this, '<%= discover_image("http://i.imgur.com/klHiCqE.png") %>');">
+						<div class="slide-preview-image" style="background-image: url(<%= discover_image("http://i.imgur.com/klHiCqE.png") %>);"></div>
+					</div>
+				</div>
+				<div class="slide-block">
+					<div class="slide-preview" onClick="switchSlides(this, '<%= discover_image("http://i.imgur.com/klHiCqE.png") %>');">
+						<div class="slide-preview-image" style="background-image: url(<%= discover_image("http://i.imgur.com/klHiCqE.png") %>);"></div>
+					</div>
+				</div>
+				<div class="slide-block">
+					<div class="slide-preview" onClick="switchSlides(this, '<%= discover_image("http://i.imgur.com/klHiCqE.png") %>');">
+						<div class="slide-preview-image" style="background-image: url(<%= discover_image("http://i.imgur.com/klHiCqE.png") %>);"></div>
+					</div>
+				</div>
+				<div class="slide-block">
+					<div class="slide-preview" onClick="switchSlides(this, '<%= discover_image("http://i.imgur.com/klHiCqE.png") %>');">
+						<div class="slide-preview-image" style="background-image: url(<%= discover_image("http://i.imgur.com/klHiCqE.png") %>);"></div>
+					</div>
+				</div>
 		</div>
 		<div class="project-sidebar">
 			<div class="sidebar-details details-skills">
 				<h4>Skills</h4>
-				<div class="details-skill">
-					<div class="skill-image" style="background-image: url(http://findicons.com/files/icons/1607/ruby_on_rails/256/ror_logo.png)"></div>
-					<div class="skill-label">Ruby on Rails</div>
-				</div>
-				<div class="details-skill">
-					<div class="skill-image" style="background-image: url(http://i.imgur.com/8fwdKvF.png)"></div>
-					<div class="skill-label">HTML5</div>
-				</div>
-				<div class="details-skill">
-					<div class="skill-image" style="background-image: url(http://i.imgur.com/NgOEccb.png)"></div>
-					<div class="skill-label">Javascript</div>
-				</div>
-				<div class="details-skill">
-					<div class="skill-image" style="background-image: url(http://i.imgur.com/IrP3Fci.png)"></div>
-					<div class="skill-label">CSS3</div>
-				</div>
-				<div class="details-skill">
-					<div class="skill-image" style="background-image: url(https://foundationstacks.com/depot/images/yeti.svg)"></div>
-					<div class="skill-label">Foundations CSS</div>
-				</div>
+				<% for project_skill in @project_skills %>
+					<% skill = project_skill.skill %>
+					<div class="details-skill">
+						<div class="skill-image" style="background-image: url(<%= discover_image(skill.img_url) %>)"></div>
+						<div class="skill-label"><%= skill.name %></div>
+					</div>
+				<% end %>
 			</div>
 			<div class="sidebar-details details-misc">
 				<!-- GitHub Link -->
@@ -92,3 +74,6 @@
 		</div>
 	</div>
 </div>
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>

@@ -4,12 +4,18 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
-    @projects = Project.all
+    @projects = Project.all.ordered
+  end
+
+  def browse
+    @projects = Project.all.ordered
   end
 
   # GET /projects/1
   # GET /projects/1.json
   def show
+    @project_skills = @project.project_skills.ordered
+    @project_images = @project.project_images.ordered
   end
 
   # GET /projects/new
