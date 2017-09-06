@@ -219,12 +219,12 @@ $on-hover-darken: brightness(0.7);
     padding: 1px 5px;
     font-size: 1em;
     white-space: nowrap;
+
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
 } .project-meta .meta-skills .meta-skill:hover .skill-label {
 	visibility: visible;
-
-	transform: translateX(-50%);
-	-webkit-transform: translateX(-50%);
-	-ms-transform: translateX(-50%);
 } 
 /*@media only screen and (max-width: 515px) {
 	.project-meta .meta-skills .meta-skill .skill-label {

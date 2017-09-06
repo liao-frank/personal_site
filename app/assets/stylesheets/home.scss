@@ -124,7 +124,8 @@ $red: #ff4646;
 	text-shadow: 2px 2px rgba(154, 78, 78, 0.28);
 } .home-content .details .mobile-show {
 	display: none;
-} @media only screen and (max-width: 515px) {
+}
+@media only screen and (max-width: 515px) {
 	.home-content .details .mobile-show {
 		display: initial;
 	}
