@@ -4,7 +4,7 @@ class ProjectSkillsController < ApplicationController
   # GET /project_skills
   # GET /project_skills.json
   def index
-    @project_skills = ProjectSkill.all
+    @project_skills = ProjectSkill.order_by_project.ordered
   end
 
   # GET /project_skills/1
@@ -28,7 +28,7 @@ class ProjectSkillsController < ApplicationController
 
     respond_to do |format|
       if @project_skill.save
-        format.html { redirect_to @project_skill, notice: 'Project skill was successfully created.' }
+        format.html { redirect_to project_skills_path, notice: 'Project skill was successfully created.' }
         format.json { render :show, status: :created, location: @project_skill }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class ProjectSkillsController < ApplicationController
   def update
     respond_to do |format|
       if @project_skill.update(project_skill_params)
-        format.html { redirect_to @project_skill, notice: 'Project skill was successfully updated.' }
+        format.html { redirect_to project_skills_path, notice: 'Project skill was successfully updated.' }
         format.json { render :show, status: :ok, location: @project_skill }
       else
         format.html { render :edit }
@@ -69,6 +69,6 @@ class ProjectSkillsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_skill_params
-      params.require(:project_skill).permit(:project_id, :skill_id, :description, :order)
+      params.require(:project_skill).permit(:project_id, :skill_id, :description, :order, :meta)
     end
 end

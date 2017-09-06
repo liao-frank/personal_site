@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>PersonalSite</title>
+		<title>Frank Liao</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<%= csrf_meta_tags %>
 
@@ -12,11 +12,30 @@
 	<body>
 		<div id="wrapper">
 			<div id="navbar">
+				<div class="hamburger">
+					<div class="hamburger-icon" style="background-image: url(<%= discover_image("icons/hamburger_white.png") %>);"></div>
+					<div class="close-icon" style="background-image: url(<%= discover_image("icons/close_white.png") %>);"></div>
+				</div>
+				<script>
+					$('.hamburger-icon').on('touchstart click', function(e) {
+						e.preventDefault();
+						showMobileNav();
+					});
+					$('.close-icon').on('touchstart click', function(e) {
+						e.preventDefault();
+						hideMobileNav();
+					});
+				</script>
 				<div class="navlinks">
+					<!--
 					<%= link_to("Home", root_path) %>
-					<a href="#">About</a>
+					<%= link_to("About", about_path) %>
 					<%= link_to("Projects", browse_path) %>
-					<a href="#">Experiences</a>
+					-->
+					<%= link_to("Home", root_path) %>
+					<%= link_to("Projects", browse_path) %>
+					<%= link_to("Resume", discover_image('fliao_resume.pdf'), target: "_blank") %>
+
 				</div>
 			</div>
 			<%= yield %>

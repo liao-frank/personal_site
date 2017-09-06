@@ -3,8 +3,10 @@
 		height: 100%;
 		overflow: hidden;
 	}
-	#navbar .navlinks a {
-		color: #8a8a8a;
+	@media only screen and (min-width: 515px) {
+		#navbar .navlinks a {
+			color: #8a8a8a;
+		}
 	}
 </style>
 <div class="home-content">
@@ -50,13 +52,28 @@
 			I'm a full stack <span class="highlight">developer</span> and digital <span class="highlight">designer</span>.
 		</div>
 		<div class="tech details">
-			New technologies mean <span class="highlight">better solutions</span>. I'm always trying to stay at the forefront of a <span class="highlight">modern world</span>.
+			<span class="mobile-hide">
+				New technologies mean <span class="highlight">better solutions</span>. I'm always trying to stay at the forefront of a <span class="highlight">modern world</span>.
+			</span>
+			<span class="mobile-show">
+				I'm always looking for new technologies and <span class="highlight">better solutions</span>.
+			</span>
 		</div>
 		<div class="creative details">
-			I'm an <span class="highlight">outside-of-the-box</span> thinker.  Count on me to solve problems with a <span class="highlight">unique and fresh</span> idea!
+			<span class="mobile-hide">
+				I'm an <span class="highlight">outside-of-the-box</span> thinker.  Count on me to solve problems with a <span class="highlight">unique and fresh</span> idea!
+			</span>
+			<span class="mobile-show">
+			I'm an <span class="highlight">outside-of-the-box</span> thinker.  Count on me to bring <span class="highlight">fresh</span> ideas!
+			</span>
 		</div>
 		<div class="avid details">
-			Discovery is my <span class="highlight">passion</span>. I'm always ready to acquire new skills and <span class="highlight">learn from others</span>.
+			<span class="mobile-hide">
+				Discovery is my <span class="highlight">passion</span>. I'm always ready to acquire new skills and <span class="highlight">learn from others</span>.
+			</span>
+			<span class="mobile-show">
+				Discovering new skills and learning from others are my <span class="highlight">passions</span>.
+			</span>
 		</div>
 	</div>
 </div>
@@ -81,26 +98,23 @@
 	</div>
 </div>
 <script>
+	resetHelloiaman();
 	maxFillText('.text-fill');
 	switchToHome('.name');
 	$('.name.switch').on('touchstart click', function(e) {
 		e.preventDefault();
 		switchToHome('.name');
-
 	});
 	$('.tech.switch').on('touchstart click', function(e) {
 		e.preventDefault();
 		switchToHome('.tech');
-
 	});
 	$('.creative.switch').on('touchstart click', function(e) {
 		e.preventDefault();
 		switchToHome('.creative');
-
 	});
 	$('.avid.switch').on('touchstart click', function(e) {
 		e.preventDefault();
 		switchToHome('.avid');
-
 	});
 </script>

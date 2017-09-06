@@ -1,7 +1,7 @@
 <div class="project-list">
-    <div class="project-block">
-        <% for @project in @projects %>
-            <%= render 'project_card' %>
-        <% end %>
-    </div>
+    <% for @project in @projects %>
+    	<div class="project-block" id="<%= @project.title.gsub(' ', '-') %>">
+	        <%= render 'project_card' %>
+	    </div>
+    <% end %>
 </div>

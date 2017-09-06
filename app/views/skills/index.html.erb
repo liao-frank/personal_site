@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Icon</th>
       <th>Name</th>
       <th>Img url</th>
       <th>Dev link</th>
@@ -15,9 +16,10 @@
   <tbody>
     <% @skills.each do |skill| %>
       <tr>
+        <td><div class="icon icon-24x24" style="background-image: url(<%= discover_image(skill.img_url) %>);"></div></td>
         <td><%= skill.name %></td>
         <td><%= skill.img_url %></td>
-        <td><%= skill.dev_link %></td>
+        <td><%= link_to skill.dev_link, skill.dev_link, :target => "_blank" %></td>
         <td><%= link_to 'Show', skill %></td>
         <td><%= link_to 'Edit', edit_skill_path(skill) %></td>
         <td><%= link_to 'Destroy', skill, method: :delete, data: { confirm: 'Are you sure?' } %></td>

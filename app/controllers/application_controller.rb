@@ -13,8 +13,17 @@ class ApplicationController < ActionController::Base
 		if /$http/.match(url) or /$.+imgur/.match(url)
 			return url
 		else
-			return ActionController::Base.helpers.asset_path(url)
+			begin
+				return ActionController::Base.helpers.asset_path(url)
+			rescue
+				return
+			end
 		end
 	end
 	helper_method :discover_image
+
+	def is_url(string)
+		/$http/.match(url)
+	end
+	helper_method :is_url
 end

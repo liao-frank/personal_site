@@ -15,4 +15,8 @@ class Project < ApplicationRecord
 	validates_numericality_of :order, only_integer: true, greater_than_or_equal_to: 0
 	# TODO uniqueness of :order per project id validation
 	# TODO cover url regex validation
+
+	def to_param
+		self.title.gsub(' ','-')
+	end
 end

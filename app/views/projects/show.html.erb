@@ -1,41 +1,29 @@
-<p id="notice"><%= notice %></p>
-
-<div class="large-container" style="margin-bottom: 100px;">
+<div class="large-container" style="margin-bottom: 20px;">
 	<h1 class="project-title"><%= @project.title %></h1>
 	<h4 class="project-subtitle"><%= @project.subtitle %></h4>
 	<div class="project-preface">
-		<div class="project-slides" style="background-image: url(<%= discover_image("http://i.imgur.com/klHiCqE.png") %>);"></div>
+		<div class="project-slides" style="background-image: url(<%= discover_image(@project.cover_url) %>);"></div>
 		<div class="project-details">
 			<div class="details-main">
-				<div class="details-brand" style="background-image: url(<%= discover_image("http://i.imgur.com/klHiCqE.png") %>);"></div>
+				<div class="details-brand" style="background-image: url(<%= discover_image(@project.cover_url) %>);"></div>
 				<div class="details-snippet-and-skills">
-					<div class="details-snippet"><%= @project.snippet %></div>
+					<div class="details-snippet"><%= raw @project.description %></div>
 				</div>
 			</div>
 		</div>
 	</div>
 	<div class="project-postface">
 		<div class="project-description">
+			<% for project_image in @project_images %>
 				<div class="slide-block">
-					<div class="slide-preview active" onClick="switchSlides(this, '<%= discover_image("http://i.imgur.com/klHiCqE.png") %>');">
-						<div class="slide-preview-image" style="background-image: url(<%= discover_image("http://i.imgur.com/klHiCqE.png") %>);"></div>
+					<div class="slide-preview" onclick="switchSlides(this, '<%= discover_image(project_image.img_url) %>');">
+						<div class="slide-preview-image" style="background-image: url(<%= discover_image(project_image.img_url) %>);"></div>
 					</div>
 				</div>
-				<div class="slide-block">
-					<div class="slide-preview" onClick="switchSlides(this, '<%= discover_image("http://i.imgur.com/klHiCqE.png") %>');">
-						<div class="slide-preview-image" style="background-image: url(<%= discover_image("http://i.imgur.com/klHiCqE.png") %>);"></div>
-					</div>
-				</div>
-				<div class="slide-block">
-					<div class="slide-preview" onClick="switchSlides(this, '<%= discover_image("http://i.imgur.com/klHiCqE.png") %>');">
-						<div class="slide-preview-image" style="background-image: url(<%= discover_image("http://i.imgur.com/klHiCqE.png") %>);"></div>
-					</div>
-				</div>
-				<div class="slide-block">
-					<div class="slide-preview" onClick="switchSlides(this, '<%= discover_image("http://i.imgur.com/klHiCqE.png") %>');">
-						<div class="slide-preview-image" style="background-image: url(<%= discover_image("http://i.imgur.com/klHiCqE.png") %>);"></div>
-					</div>
-				</div>
+			<% end %>
+			<script>
+				switchSlides($('.slide-preview').first().click());
+			</script>
 		</div>
 		<div class="project-sidebar">
 			<div class="sidebar-details details-skills">
@@ -50,15 +38,15 @@
 			</div>
 			<div class="sidebar-details details-misc">
 				<!-- GitHub Link -->
-				<% if @project.github_link %>
+				<% if @project.github_link != "" %>
 					<h4>Github Link</h4>
 					<a href="<%= @project.github_link %>" target="_blank">
 						<div class="icon icon-12x12" style="background-image: url(<%= discover_image("icons/external_link_white.png") %>);"></div>
-						<%= clean_url(@project.github_link) %> LONG TEXT TEST
+						<%= clean_url(@project.github_link) %>
 					</a>
 				<% end %>
 				<!-- Project Link -->
-				<% if @project.site_link %>
+				<% if @project.site_link != "" %>
 					<h4>Project Link</h4>
 					<a href="<%= @project.site_link %>" target="_blank">
 						<div class="icon icon-12x12" style="background-image: url(<%= discover_image("icons/external_link_white.png") %>);"></div>
@@ -66,7 +54,7 @@
 					</a>
 				<% end %>
 				<!-- Project Dates -->
-				<% if @project.dates %>
+				<% if @project.dates != "" %>
 					<h4>Project Dates</h4>
 					<%= @project.dates %>
 				<% end %>
@@ -75,5 +63,13 @@
 	</div>
 </div>
 
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+
+<% if false %>
+	<p id="notice"><%= notice %></p>
+	<%= link_to 'Edit', edit_project_path(@project) %> |
+<% else %>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<% end %>
+<%= link_to browse_path(anchor: "#{@project.title.gsub(' ', '-')}")do %>
+	Back to Projects
+<% end %>

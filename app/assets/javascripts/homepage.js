@@ -4,7 +4,7 @@ function resetHelloiaman() {
 	maxFillText('.home-content .i-am');
 }
 function helloiaman(section) {
-	resetHelloiaman();
+	// resetHelloiaman();
 
 	let WIDTH = $('.home-content .i-am span').width();
 	var section_width;
@@ -14,7 +14,7 @@ function helloiaman(section) {
 		section_width = 203 / 263;
 		offset = 0;
 	} else if (section == "iama") {
-		section_width = 109 / 263;
+		section_width = 108.5 / 263;
 		offset = 128 / 263;
 	} else if (section == "iaman") {
 		section_width = 135 / 263;

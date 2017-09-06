@@ -2,9 +2,9 @@
 	<div class="project-contents">
 		<div class="project-cover">
 			<%= link_to(project_path(@project), class: "cover-link") do %><% end %>
-			<div class="cover-image" style="background-image: url(http://i.imgur.com/klHiCqE.png);">
+			<div class="cover-image" style="background-image: url(<%= discover_image(@project.cover_url) %>);">
 			</div>
-			<div class="cover-overlay"><%= @project.snippet %></div>
+			<div class="cover-overlay"><%= raw @project.snippet %></div>
 		</div>
 		<div class="project-meta">
 			<%= link_to(project_path(@project)) do %>
@@ -19,9 +19,10 @@
 			<% end %>
 			<div class="meta-right">
 				<div class="meta-skills">
-					<% for project_skill in @project.project_skills.ordered.take(3) %>
+					<% meta_skills = @project.project_skills.ordered.meta.take(3) %>
+					<% for project_skill in meta_skills %>
 						<% skill = project_skill.skill %>
-						<div class="meta-skill">
+						<div class="meta-skill meta-skill-1-<%= meta_skills.size %>">
 							<div class="skill-image" style="background-image: url(<%= discover_image(skill.img_url) %>)"></div>
 							<div class="skill-label"><%= skill.name %></div>
 						</div>
