@@ -61,15 +61,16 @@
 			</div>
 		</div>
 	</div>
+
+	<% if false %>
+		<p id="notice"><%= notice %></p>
+		<%= link_to 'Edit', edit_project_path(@project) %> |
+	<% else %>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<% end %>
+	<%= link_to browse_path(anchor: "#{@project.title.gsub(' ', '-')}")do %>
+		Back to Projects
+	<% end %>
 </div>
 
 
-<% if false %>
-	<p id="notice"><%= notice %></p>
-	<%= link_to 'Edit', edit_project_path(@project) %> |
-<% else %>
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<% end %>
-<%= link_to browse_path(anchor: "#{@project.title.gsub(' ', '-')}")do %>
-	Back to Projects
-<% end %>
