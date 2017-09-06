@@ -1,0 +1,433 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 9.5.8
+-- Dumped by pg_dump version 9.5.8
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+SET row_security = off;
+
+--
+-- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
+--
+
+CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
+
+
+--
+-- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
+
+
+SET search_path = public, pg_catalog;
+
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+--
+-- Name: ar_internal_metadata; Type: TABLE; Schema: public; Owner: frank
+--
+
+CREATE TABLE ar_internal_metadata (
+    key character varying NOT NULL,
+    value character varying,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE ar_internal_metadata OWNER TO frank;
+
+--
+-- Name: project_images; Type: TABLE; Schema: public; Owner: frank
+--
+
+CREATE TABLE project_images (
+    id bigint NOT NULL,
+    project_id integer,
+    caption text,
+    img_url character varying,
+    "order" integer,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE project_images OWNER TO frank;
+
+--
+-- Name: project_images_id_seq; Type: SEQUENCE; Schema: public; Owner: frank
+--
+
+CREATE SEQUENCE project_images_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE project_images_id_seq OWNER TO frank;
+
+--
+-- Name: project_images_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: frank
+--
+
+ALTER SEQUENCE project_images_id_seq OWNED BY project_images.id;
+
+
+--
+-- Name: project_skills; Type: TABLE; Schema: public; Owner: frank
+--
+
+CREATE TABLE project_skills (
+    id bigint NOT NULL,
+    project_id integer,
+    skill_id integer,
+    description text,
+    "order" integer,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL,
+    meta boolean
+);
+
+
+ALTER TABLE project_skills OWNER TO frank;
+
+--
+-- Name: project_skills_id_seq; Type: SEQUENCE; Schema: public; Owner: frank
+--
+
+CREATE SEQUENCE project_skills_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE project_skills_id_seq OWNER TO frank;
+
+--
+-- Name: project_skills_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: frank
+--
+
+ALTER SEQUENCE project_skills_id_seq OWNED BY project_skills.id;
+
+
+--
+-- Name: projects; Type: TABLE; Schema: public; Owner: frank
+--
+
+CREATE TABLE projects (
+    id bigint NOT NULL,
+    title character varying,
+    subtitle character varying,
+    snippet text,
+    description text,
+    dates character varying,
+    collaboration character varying,
+    cover_url character varying,
+    "order" integer,
+    visibility character varying,
+    site_link character varying,
+    github_link character varying,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE projects OWNER TO frank;
+
+--
+-- Name: projects_id_seq; Type: SEQUENCE; Schema: public; Owner: frank
+--
+
+CREATE SEQUENCE projects_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE projects_id_seq OWNER TO frank;
+
+--
+-- Name: projects_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: frank
+--
+
+ALTER SEQUENCE projects_id_seq OWNED BY projects.id;
+
+
+--
+-- Name: schema_migrations; Type: TABLE; Schema: public; Owner: frank
+--
+
+CREATE TABLE schema_migrations (
+    version character varying NOT NULL
+);
+
+
+ALTER TABLE schema_migrations OWNER TO frank;
+
+--
+-- Name: skills; Type: TABLE; Schema: public; Owner: frank
+--
+
+CREATE TABLE skills (
+    id bigint NOT NULL,
+    name character varying,
+    img_url character varying,
+    dev_link character varying,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE skills OWNER TO frank;
+
+--
+-- Name: skills_id_seq; Type: SEQUENCE; Schema: public; Owner: frank
+--
+
+CREATE SEQUENCE skills_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE skills_id_seq OWNER TO frank;
+
+--
+-- Name: skills_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: frank
+--
+
+ALTER SEQUENCE skills_id_seq OWNED BY skills.id;
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: frank
+--
+
+ALTER TABLE ONLY project_images ALTER COLUMN id SET DEFAULT nextval('project_images_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: frank
+--
+
+ALTER TABLE ONLY project_skills ALTER COLUMN id SET DEFAULT nextval('project_skills_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: frank
+--
+
+ALTER TABLE ONLY projects ALTER COLUMN id SET DEFAULT nextval('projects_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: frank
+--
+
+ALTER TABLE ONLY skills ALTER COLUMN id SET DEFAULT nextval('skills_id_seq'::regclass);
+
+
+--
+-- Data for Name: ar_internal_metadata; Type: TABLE DATA; Schema: public; Owner: frank
+--
+
+COPY ar_internal_metadata (key, value, created_at, updated_at) FROM stdin;
+environment	development	2017-09-02 19:09:13.744444	2017-09-02 19:09:13.744444
+\.
+
+
+--
+-- Data for Name: project_images; Type: TABLE DATA; Schema: public; Owner: frank
+--
+
+COPY project_images (id, project_id, caption, img_url, "order", created_at, updated_at) FROM stdin;
+\.
+
+
+--
+-- Name: project_images_id_seq; Type: SEQUENCE SET; Schema: public; Owner: frank
+--
+
+SELECT pg_catalog.setval('project_images_id_seq', 1, false);
+
+
+--
+-- Data for Name: project_skills; Type: TABLE DATA; Schema: public; Owner: frank
+--
+
+COPY project_skills (id, project_id, skill_id, description, "order", created_at, updated_at, meta) FROM stdin;
+1	1	1		1	2017-09-02 20:08:26.518629	2017-09-02 20:15:32.767738	t
+2	1	5		2	2017-09-02 20:15:46.282505	2017-09-02 20:15:46.282505	t
+3	1	2		3	2017-09-02 20:15:52.976731	2017-09-02 20:15:52.976731	f
+4	1	3		4	2017-09-02 20:16:00.442327	2017-09-02 20:16:00.442327	f
+5	1	4		5	2017-09-02 20:16:10.719692	2017-09-02 20:16:10.719692	f
+6	2	1		1	2017-09-02 22:51:22.782239	2017-09-02 22:51:22.782239	t
+7	2	5		2	2017-09-02 22:51:29.379545	2017-09-02 22:51:29.379545	t
+8	2	2		3	2017-09-02 22:51:35.961759	2017-09-02 22:51:35.961759	f
+9	2	3		4	2017-09-02 22:51:42.784877	2017-09-02 22:51:42.784877	f
+10	2	4		5	2017-09-02 22:51:50.9922	2017-09-02 22:51:50.9922	f
+11	3	1		1	2017-09-02 22:52:01.449567	2017-09-02 22:52:01.449567	t
+12	3	6		2	2017-09-02 22:56:28.491897	2017-09-02 22:56:28.491897	t
+13	3	2		3	2017-09-02 22:56:36.114886	2017-09-02 22:56:36.114886	f
+14	3	3		4	2017-09-02 22:56:45.22993	2017-09-02 22:56:45.22993	f
+16	4	7		1	2017-09-03 03:26:35.897949	2017-09-03 03:26:35.897949	t
+18	3	4		5	2017-09-03 03:43:38.497108	2017-09-03 03:43:38.497108	f
+19	4	8		2	2017-09-03 05:37:24.63706	2017-09-03 05:37:24.63706	t
+20	5	8		1	2017-09-03 07:10:29.66613	2017-09-03 07:10:29.66613	t
+21	5	9		2	2017-09-03 07:10:35.986259	2017-09-03 07:10:35.986259	t
+22	5	10		3	2017-09-03 07:10:47.780844	2017-09-03 07:12:35.181574	f
+23	6	2		1	2017-09-03 18:11:48.742476	2017-09-03 18:11:48.742476	t
+24	6	3		2	2017-09-03 18:11:58.349115	2017-09-03 18:11:58.349115	t
+25	6	4		3	2017-09-03 18:12:09.762904	2017-09-03 18:12:09.762904	t
+26	7	11		1	2017-09-05 21:48:19.410984	2017-09-05 21:48:19.410984	t
+\.
+
+
+--
+-- Name: project_skills_id_seq; Type: SEQUENCE SET; Schema: public; Owner: frank
+--
+
+SELECT pg_catalog.setval('project_skills_id_seq', 26, true);
+
+
+--
+-- Data for Name: projects; Type: TABLE DATA; Schema: public; Owner: frank
+--
+
+COPY projects (id, title, subtitle, snippet, description, dates, collaboration, cover_url, "order", visibility, site_link, github_link, created_at, updated_at) FROM stdin;
+6	24 Game Solver	Static Web App	The 24 solver was a day project that I made for my little brother.\r\n\r\nThe single file webpage is capable of providing solutions to any numeric inputs.	The 24 solver was a day project that I made for my little brother. I made the solver to help him practice for competitions. He later became the county champ :)\r\n\r\nThe single file webpage is capable of providing solutions to any numeric inputs, including fractions and exponents.	March 2017	solo	covers/24_solver.png	7	visible	https://liao-frank.github.io/24-Math-Game-Solver/	https://github.com/liao-frank/24-Math-Game-Solver	2017-09-03 17:54:54.974262	2017-09-03 18:11:34.081591
+1	A&M Chess Store	eCommerce Web App	The A&M Chess Store is an eCommerce site built as part of a semester-long course project.\r\n\r\nThis project won the <i>Chili Pepper Award</i>!	The A&M Chess Store was a semester-long course project. The entirety of the site, from the database to the webpages, was designed and developed by me from the ground up.\r\n\r\nThis project won the <i>Chili Pepper Award</i>, for best design and development among the entire CMU IS Class of 2019.\r\n\r\n<small style="color: #aaaaaa;">The project is hosted for free on Heroku. Click the link below to visit! The dyno may take a little while to wake up.</small>	Spring Semester 2017	Solo	covers/am_chess_store.png	1	visible	https://gentle-brushlands-60542.herokuapp.com/	https://github.com/liao-frank/A-M-Chess-Store	2017-09-02 19:09:42.157931	2017-09-03 03:45:49.067258
+4	Social Network Attacks	Testing Framework (DoD)	This project was developed for the Department of Defense.\r\n\r\nWe developed the framework to simulate different attack vectors and to test proposed detection algorithms.	This project was developed as part of research done for the Department of Defense. As a pair of students, we researched graph-based detection of fake profiles in different social network implementations, such as Facebook.\r\n\r\nWe developed the framework as a testing environment to simulate different attack vectors and to test proposed detection algorithms.	Summer 2017	3	covers/social_network.png	4	visible		https://github.com/liao-frank/Social-Network-Framework	2017-09-03 03:08:26.376142	2017-09-03 07:15:20.575619
+2	Pail	Social Payment Web App	Pail is a transaction web app that I built, as part of a team of 3 students, for a Capital One hackathon.	Pail is a transaction web app. The focus is to provide a social platform for peer-to-peer and crowd-to-peer fund management.\r\n\r\nI built this app, as part of a team of 3 students, for a Capital One hackathon. The entirety of the site was built from the ground up.\r\n\r\n<small style="color: #aaaaaa;">The project is hosted for free on Heroku. Click the link below to visit! The dyno may take a little while to wake up.</small>	May 2017	3	covers/pail.png	2	visible	https://pure-springs-74336.herokuapp.com/	https://github.com/liao-frank/Pail	2017-09-02 22:24:28.975615	2017-09-03 05:13:01.314663
+3	Yelp Me Out	Foodie Web App	'yelp me out' is a food recommendation web app. I built this app as part of an online coding challenge.\r\n\r\nThe app uses yelp's Fusion REST API to query information.	'yelp me out' is a food recommendation web app. I built this app as part of an online coding challenge.\r\n\r\nThe app uses yelp's Fusion REST API to query information and suggests restaurants based on a handful of questions.\r\n\r\n<small style="color: #aaaaaa;">The project is hosted for free on Heroku. Click the link below to visit! The dyno may take a little while to wake up.</small>	April 2017	solo	covers/yelp_me_out.png	3	visible	https://stormy-mesa-60847.herokuapp.com/	https://github.com/liao-frank/yelp-me-out	2017-09-02 22:47:34.871994	2017-09-03 05:23:14.144004
+5	Satellite Radar Imaging	Change Detection Library (NSF)	This project was developed for the National Science Foundation.\r\n\r\nWe developed a library for automated satellite image change detection using neural networks.	This project was developed as part of research done for the National Science Foundation. As a group of 3 students, we researched various image segmentation and machine learning techniques.\r\n\r\nWe developed a library that used neural networks for automated detection of change in satellite radar images over time.	Summer 2016	3	covers/neural_networks.png	6	visible			2017-09-03 06:55:10.663121	2017-09-03 07:21:02.022951
+7	Google's MapReduce	MapReduce Framework	This project was an implementation of Google's original MapReduce model.\r\n\r\nThe framework was built as part of a course focusing on OOP/OOD and other software design principles.	This project was an implementation of <a href="https://research.google.com/archive/mapreduce.html" target="_blank">Google's original MapReduce model</a>.\r\n\r\nThe framework was built and designed entirely by me, as part of a course focusing on OOP/OOD and other software design principles.\r\n\r\nDue to academic confidentiality, I cannot expose much about this project.	Fall 2016	solo	covers/google-mapreduce.png	8	visible			2017-09-05 21:32:44.579687	2017-09-05 22:03:06.671632
+\.
+
+
+--
+-- Name: projects_id_seq; Type: SEQUENCE SET; Schema: public; Owner: frank
+--
+
+SELECT pg_catalog.setval('projects_id_seq', 7, true);
+
+
+--
+-- Data for Name: schema_migrations; Type: TABLE DATA; Schema: public; Owner: frank
+--
+
+COPY schema_migrations (version) FROM stdin;
+20170809033918
+20170809034011
+20170809040937
+20170809043523
+20170902201139
+\.
+
+
+--
+-- Data for Name: skills; Type: TABLE DATA; Schema: public; Owner: frank
+--
+
+COPY skills (id, name, img_url, dev_link, created_at, updated_at) FROM stdin;
+1	Ruby on Rails	skills/ruby_on_rails.png	http://rubyonrails.org/	2017-09-02 19:23:22.572522	2017-09-02 19:23:22.572522
+2	HTML5	skills/html5.png	https://en.wikipedia.org/wiki/HTML5	2017-09-02 19:31:41.066866	2017-09-02 19:31:41.066866
+3	CSS3	skills/css3.png	https://en.wikipedia.org/wiki/Cascading_Style_Sheets	2017-09-02 19:32:01.347756	2017-09-02 19:32:01.347756
+4	Javascript	skills/javascript.png	https://en.wikipedia.org/wiki/JavaScript	2017-09-02 19:35:27.799838	2017-09-02 19:35:27.799838
+5	PostgreSQL	skills/postgresql.png	https://www.postgresql.org/	2017-09-02 19:36:08.805167	2017-09-02 19:36:08.805167
+6	REST APIs	skills/rest_apis.png	https://en.wikipedia.org/wiki/Representational_state_transfer	2017-09-02 22:55:44.887537	2017-09-02 22:55:44.887537
+7	Python	skills/python.png	https://www.python.org/	2017-09-03 03:21:56.7284	2017-09-03 03:21:56.7284
+8	MATLAB	skills/matlab.png	https://www.mathworks.com/products/matlab.html	2017-09-03 03:22:33.396382	2017-09-03 03:22:33.396382
+9	Neural Networks	skills/neural_networks.png	https://en.wikipedia.org/wiki/Artificial_neural_network	2017-09-03 03:23:08.954343	2017-09-03 03:23:08.954343
+10	Image Segmentation	skills/image_segmentation.png	https://en.wikipedia.org/wiki/Image_segmentation	2017-09-03 03:23:50.314925	2017-09-03 03:25:58.35329
+11	Java	skills/java.png	https://go.java/index.html?intcmp=gojava-banner-java-com	2017-09-03 06:11:12.248078	2017-09-03 06:11:12.248078
+\.
+
+
+--
+-- Name: skills_id_seq; Type: SEQUENCE SET; Schema: public; Owner: frank
+--
+
+SELECT pg_catalog.setval('skills_id_seq', 11, true);
+
+
+--
+-- Name: ar_internal_metadata_pkey; Type: CONSTRAINT; Schema: public; Owner: frank
+--
+
+ALTER TABLE ONLY ar_internal_metadata
+    ADD CONSTRAINT ar_internal_metadata_pkey PRIMARY KEY (key);
+
+
+--
+-- Name: project_images_pkey; Type: CONSTRAINT; Schema: public; Owner: frank
+--
+
+ALTER TABLE ONLY project_images
+    ADD CONSTRAINT project_images_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: project_skills_pkey; Type: CONSTRAINT; Schema: public; Owner: frank
+--
+
+ALTER TABLE ONLY project_skills
+    ADD CONSTRAINT project_skills_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: projects_pkey; Type: CONSTRAINT; Schema: public; Owner: frank
+--
+
+ALTER TABLE ONLY projects
+    ADD CONSTRAINT projects_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: schema_migrations_pkey; Type: CONSTRAINT; Schema: public; Owner: frank
+--
+
+ALTER TABLE ONLY schema_migrations
+    ADD CONSTRAINT schema_migrations_pkey PRIMARY KEY (version);
+
+
+--
+-- Name: skills_pkey; Type: CONSTRAINT; Schema: public; Owner: frank
+--
+
+ALTER TABLE ONLY skills
+    ADD CONSTRAINT skills_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: public; Type: ACL; Schema: -; Owner: postgres
+--
+
+REVOKE ALL ON SCHEMA public FROM PUBLIC;
+REVOKE ALL ON SCHEMA public FROM postgres;
+GRANT ALL ON SCHEMA public TO postgres;
+GRANT ALL ON SCHEMA public TO PUBLIC;
+
+
+--
+-- PostgreSQL database dump complete
+--
+
