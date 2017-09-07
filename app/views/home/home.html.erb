@@ -98,23 +98,25 @@
 	</div>
 </div>
 <script>
-	resetHelloiaman();
-	maxFillText('.text-fill');
-	switchToHome('.name');
-	$('.name.switch').on('touchstart click', function(e) {
-		e.preventDefault();
+	$(window).on('load', function() {
+		resetHelloiaman();
+		maxFillText('.text-fill');
 		switchToHome('.name');
-	});
-	$('.tech.switch').on('touchstart click', function(e) {
-		e.preventDefault();
-		switchToHome('.tech');
-	});
-	$('.creative.switch').on('touchstart click', function(e) {
-		e.preventDefault();
-		switchToHome('.creative');
-	});
-	$('.avid.switch').on('touchstart click', function(e) {
-		e.preventDefault();
-		switchToHome('.avid');
+		$('.name.switch').on('touchstart click', function(e) {
+			e.preventDefault();
+			switchToHome('.name');
+		});
+		$('.tech.switch').on('touchstart click', function(e) {
+			e.preventDefault();
+			switchToHome('.tech');
+		});
+		$('.creative.switch').on('touchstart click', function(e) {
+			e.preventDefault();
+			switchToHome('.creative');
+		});
+		$('.avid.switch').on('touchstart click', function(e) {
+			e.preventDefault();
+			switchToHome('.avid');
+		});
 	});
 </script>
