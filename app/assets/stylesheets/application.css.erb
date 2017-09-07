@@ -15,12 +15,16 @@
  */
 @font-face {
 	font-family: "Lato";
-	src: url(<%= asset_path("fonts/lato/Lato-Regular.ttf") %>) format("truetype");
+	src: url(<%= asset_path("fonts/lato-new/Lato-Regular.eot") %>) format("embedded-opentype"),
+	src: url(<%= asset_path("fonts/lato-new/Lato-Regular.ttf") %>) format("truetype"),
+	src: url(<%= asset_path("fonts/lato-new/Lato-Regular.woff") %>) format("woff");
 	font-weight: normal;
 }
 @font-face {
 	font-family: "Lato";
-	src: url(<%= asset_path("fonts/lato/Lato-Bold.ttf") %>) format("truetype");
+	src: url(<%= asset_path("fonts/lato-new/Lato-Bold.eot") %>) format("embedded-opentype"),
+	src: url(<%= asset_path("fonts/lato-new/Lato-Bold.ttf") %>) format("truetype"),
+	src: url(<%= asset_path("fonts/lato-new/Lato-Bold.woff") %>) format("woff");
 	font-weight: bold;
 }
 html, body { height: 100%; }
