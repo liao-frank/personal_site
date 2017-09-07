@@ -14,6 +14,11 @@
 	</div>
 	<div class="project-postface">
 		<div class="project-description">
+			<div class="slide-block">
+			<div class="slide-preview" onclick="switchSlides(this, '<%= discover_image(@project.cover_url) %>');">
+					<div class="slide-preview-image" style="background-image: url(<%= discover_image(@project.cover_url) %>);"></div>
+				</div>
+			</div>
 			<% for project_image in @project_images %>
 				<div class="slide-block">
 					<div class="slide-preview" onclick="switchSlides(this, '<%= discover_image(project_image.img_url) %>');">
@@ -65,10 +70,8 @@
 	<% if false %>
 		<p id="notice"><%= notice %></p>
 		<%= link_to 'Edit', edit_project_path(@project) %> |
-	<% else %>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	<% end %>
-	<%= link_to browse_path(anchor: "#{@project.title.gsub(' ', '-')}")do %>
+	<%= link_to browse_path(anchor: "#{@project.title.gsub(' ', '-')}"), class: 'project-back-link' do %>
 		Back to Projects
 	<% end %>
 </div>

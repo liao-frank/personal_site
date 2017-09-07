@@ -237,9 +237,13 @@ $on-hover-darken: brightness(0.7);
 /* Project Page */
 .project-title,
 .project-subtitle {
-	margin: 0 auto;
 	font-weight: bold;
+} .project-title {
+	margin: 0;
+	margin-top: 15px;
 } .project-subtitle {
+	margin: 2px auto;
+
 	position: relative;
 	bottom: 5px;
 
@@ -465,6 +469,9 @@ $on-hover-darken: brightness(0.7);
 }
 
 @media only screen and (max-width: 515px) {
+	.project-subtitle {
+		margin: 1px auto;
+	}
 	.project-preface .project-slides {
 		display: none;
 	} .project-preface .project-details,
@@ -474,5 +481,14 @@ $on-hover-darken: brightness(0.7);
 	}
 	.project-description {
 		display: none;
+	}
+	.project-back-link {
+		display: inline-block;
+		position: relative;
+		left: 50%;
+
+		transform: translateX(-50%);
+		-webkit-transform: translateX(-50%);
+		-ms-transform: translateX(-50%);
 	}
 }

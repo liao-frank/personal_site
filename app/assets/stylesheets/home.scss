@@ -161,6 +161,11 @@ $red: #ff4646;
 	-o-animation:      shad-anim 30s linear infinite; /* Opera 12+ */
 	animation:         shad-anim 30s linear infinite; /* IE 10+, Fx 29+ */
 }
+@media only screen and (max-width: 515px) {
+	.home-content .creative.title span:after {
+		background-size: .075em .075em;
+	}
+}
 
 @-webkit-keyframes shad-anim {
 	0% {background-position: 0 0}
