@@ -164,6 +164,10 @@ $red: #ff4646;
 @media only screen and (max-width: 515px) {
 	.home-content .creative.title span:after {
 		background-size: .075em .075em;
+		top: 6.2px; left: 6.2px;
+	}
+	.home-content .creative.title {
+		text-shadow: 4px 4px #242424; /*same color as background*/
 	}
 }
 
@@ -453,4 +457,5 @@ $red: #ff4646;
 	.home-content {
 		top: 15%;
 	}
+
 }
