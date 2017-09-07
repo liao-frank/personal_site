@@ -13,7 +13,16 @@
  *= require_tree .
  *= require_self
  */
-@import url('https://fonts.googleapis.com/css?family=Lato');
+@font-face {
+	font-family: "Lato";
+	src: font-url(<%= asset_path("fonts/Lato-Regular.ttf") %>) format("truetype");
+	font-weight: normal;
+}
+@font-face {
+	font-family: "Lato";
+	src: font-url(<%= asset_path("fonts/Lato-Bold.ttf") %>) format("truetype");
+	font-weight: bold;
+}
 html, body { height: 100%; }
 body {
 	margin: 0;
@@ -21,7 +30,7 @@ body {
 	background-color: #242424;
 	color: #fff;
 
-	font-family: "Lato", "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
+	font-family: "Lato", Sans-Serif;
 	line-height: 1.5;
 	font-size: 15px;
 	font-weight: 400;
@@ -258,7 +267,6 @@ table {
 	#navbar .hamburger {
 		position: relative;
 		top: 50%;
-		left: ;
 		transform: translate(70%, -50%);
 		-webkit-transform: translate(70%, -50%);
 		-ms-transform: translate(70%, -50%);
