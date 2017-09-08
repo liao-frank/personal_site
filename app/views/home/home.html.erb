@@ -108,9 +108,9 @@
 
 	$(window).on('turbolinks:load', function() {
 		switchToHome('.name');
-		// setTimeout(function() {
-		// 	switchToHome('.name');
-		// }, 200);
+		setTimeout(function() {
+			switchToHome('.name');
+		}, 100);
 
 		$('.name.switch').on('touchstart click', function(e) {
 			e.preventDefault();
