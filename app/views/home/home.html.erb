@@ -105,9 +105,11 @@
 <script>
 	resetHelloiaman();
 	maxFillText('.text-fill');
-	
+
 	$(document).on('turbolinks:load', function() {
 		switchToHome('.name');
+		switchToHome('.name');
+		
 		$('.name.switch').on('touchstart click', function(e) {
 			e.preventDefault();
 			switchToHome('.name');

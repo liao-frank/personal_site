@@ -1,0 +1,1723 @@
+/* line 11, /home/frank/Documents/personal_site/app/assets/stylesheets/home.scss */
+.home-content {
+  text-transform: uppercase;
+  font-weight: bold;
+  line-height: 1;
+  text-align: center;
+  height: 50%;
+  position: relative;
+  top: 20%;
+  cursor: default;
+}
+
+/* line 23, /home/frank/Documents/personal_site/app/assets/stylesheets/home.scss */
+.home-content .i-am {
+  margin: 0 auto;
+  overflow: hidden;
+  height: 10%;
+  transition: width 0.4s ease;
+  -webkit-transition: width 0.4s ease;
+}
+
+/* line 31, /home/frank/Documents/personal_site/app/assets/stylesheets/home.scss */
+.home-content .i-am span {
+  display: inline-block;
+  white-space: nowrap;
+  transition: transform 0.4s ease;
+  -webkit-transition: transform 0.4s ease;
+}
+
+/* line 39, /home/frank/Documents/personal_site/app/assets/stylesheets/home.scss */
+.home-content .home-titles {
+  width: 100%;
+  height: 60%;
+  margin: 10px 0;
+  position: relative;
+}
+
+/* line 46, /home/frank/Documents/personal_site/app/assets/stylesheets/home.scss */
+.home-content .title {
+  visibility: hidden;
+  opacity: 0;
+  -ms-transform: rotate(7deg) translate(20px, -20px);
+  /* IE 9 */
+  -webkit-transform: rotate(7deg) translate(20px, -20px);
+  /* Chrome, Safari, Opera */
+  transform: rotate(7deg) translate(20px, -20px);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: opacity 0.4s ease;
+  transition: opacity 0.4s ease;
+}
+
+/* line 60, /home/frank/Documents/personal_site/app/assets/stylesheets/home.scss */
+.home-content .title .line {
+  height: 50%;
+}
+
+/* line 62, /home/frank/Documents/personal_site/app/assets/stylesheets/home.scss */
+.home-content .title.visible {
+  visibility: visible;
+  opacity: 1;
+  -ms-transform: none;
+  /* IE 9 */
+  -webkit-transform: none;
+  /* Chrome, Safari, Opera */
+  transform: none;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+/* line 73, /home/frank/Documents/personal_site/app/assets/stylesheets/home.scss */
+.home-content .name.title {
+  color: #8d8d8d;
+  text-shadow: 5px 5px rgba(0, 0, 0, 0.28);
+}
+
+/* line 76, /home/frank/Documents/personal_site/app/assets/stylesheets/home.scss */
+.home-content .tech.title {
+  color: #47cf73;
+  text-shadow: 4px 4px rgba(78, 154, 108, 0.28);
+}
+
+/* line 79, /home/frank/Documents/personal_site/app/assets/stylesheets/home.scss */
+.home-content .creative.title {
+  color: #0ebeff;
+  text-shadow: 3px 3px #242424;
+  /*same color as background*/
+}
+
+/* line 82, /home/frank/Documents/personal_site/app/assets/stylesheets/home.scss */
+.home-content .avid.title {
+  color: #ff4646;
+  text-shadow: 4px 4px rgba(154, 78, 78, 0.28);
+}
+
+/* line 87, /home/frank/Documents/personal_site/app/assets/stylesheets/home.scss */
+.home-content .home-details {
+  position: relative;
+  width: 40%;
+  height: 30%;
+  margin: 0 auto;
+}
+
+/* line 94, /home/frank/Documents/personal_site/app/assets/stylesheets/home.scss */
+.home-content .details {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  line-height: 1.3;
+  font-size: 1.5em;
+  -webkit-transition: opacity 0.4s ease;
+  transition: opacity 0.4s ease;
+}
+
+/* line 108, /home/frank/Documents/personal_site/app/assets/stylesheets/home.scss */
+.home-content .details.visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* line 113, /home/frank/Documents/personal_site/app/assets/stylesheets/home.scss */
+.home-content .name.details .highlight {
+  color: #8d8d8d;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.28);
+}
+
+/* line 116, /home/frank/Documents/personal_site/app/assets/stylesheets/home.scss */
+.home-content .tech.details .highlight {
+  color: #47cf73;
+  text-shadow: 2px 2px rgba(78, 154, 108, 0.28);
+}
+
+/* line 119, /home/frank/Documents/personal_site/app/assets/stylesheets/home.scss */
+.home-content .creative.details .highlight {
+  color: #0ebeff;
+  text-shadow: 2px 2px rgba(78, 130, 154, 0.28);
+}
+
+/* line 122, /home/frank/Documents/personal_site/app/assets/stylesheets/home.scss */
+.home-content .avid.details .highlight {
+  color: #ff4646;
+  text-shadow: 2px 2px rgba(154, 78, 78, 0.28);
+}
+
+/* line 125, /home/frank/Documents/personal_site/app/assets/stylesheets/home.scss */
+.home-content .details .mobile-show {
+  display: none;
+}
+
+@media only screen and (max-width: 515px) {
+  /* line 129, /home/frank/Documents/personal_site/app/assets/stylesheets/home.scss */
+  .home-content .details .mobile-show {
+    display: initial;
+  }
+
+  /* line 132, /home/frank/Documents/personal_site/app/assets/stylesheets/home.scss */
+  .home-content .details .mobile-hide {
+    display: none;
+  }
+}
+/* Creative Title */
+/* line 138, /home/frank/Documents/personal_site/app/assets/stylesheets/home.scss */
+.home-content .creative.title span {
+  position: relative;
+}
+
+/* line 141, /home/frank/Documents/personal_site/app/assets/stylesheets/home.scss */
+.home-content .creative.title span:after {
+  content: attr(data-shadow);
+  position: absolute;
+  top: .06em;
+  left: .06em;
+  z-index: -1;
+  text-shadow: none;
+  background-image: linear-gradient(45deg, transparent 45%, #ebe9e0 45%, #ebe9e0 55%, transparent 0);
+  background-size: .05em .05em;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: shad-anim 30s linear infinite;
+  /* Safari 4+ */
+  -moz-animation: shad-anim 30s linear infinite;
+  /* Fx 5+ */
+  -o-animation: shad-anim 30s linear infinite;
+  /* Opera 12+ */
+  animation: shad-anim 30s linear infinite;
+  /* IE 10+, Fx 29+ */
+}
+
+@media only screen and (max-width: 515px) {
+  /* line 165, /home/frank/Documents/personal_site/app/assets/stylesheets/home.scss */
+  .home-content .creative.title span:after {
+    background-size: .075em .075em;
+    top: 6.2px;
+    left: 6.2px;
+  }
+
+  /* line 169, /home/frank/Documents/personal_site/app/assets/stylesheets/home.scss */
+  .home-content .creative.title {
+    text-shadow: 4px 4px #242424;
+    /*same color as background*/
+  }
+}
+@-webkit-keyframes shad-anim {
+  0% {
+    background-position: 0 0;
+  }
+  0% {
+    background-position: 100% -100%;
+  }
+}
+@-moz-keyframes shad-anim {
+  0% {
+    background-position: 0 0;
+  }
+  0% {
+    background-position: 100% -100%;
+  }
+}
+@-o-keyframes shad-anim {
+  0% {
+    background-position: 0 0;
+  }
+  0% {
+    background-position: 100% -100%;
+  }
+}
+@keyframes shad-anim {
+  0% {
+    background-position: 0 0;
+  }
+  0% {
+    background-position: 100% -100%;
+  }
+}
+/* IE remove and add static text shadow */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /* line 193, /home/frank/Documents/personal_site/app/assets/stylesheets/home.scss */
+  .home-content .creative.title span {
+    text-shadow: 4px 4px #242424, 0.06em 0.06em #fff;
+  }
+
+  /* line 196, /home/frank/Documents/personal_site/app/assets/stylesheets/home.scss */
+  .home-content .creative.title span:after {
+    content: none;
+    background-image: none;
+  }
+}
+@supports (-ms-accelerator: true) {
+  /* line 202, /home/frank/Documents/personal_site/app/assets/stylesheets/home.scss */
+  .home-content .creative.title span {
+    text-shadow: 3px 3px #242424, 0.06em 0.06em #fff;
+  }
+
+  /* line 205, /home/frank/Documents/personal_site/app/assets/stylesheets/home.scss */
+  .home-content .creative.title span:after {
+    content: none;
+    background-image: none;
+  }
+}
+/* Avid Title */
+/* line 212, /home/frank/Documents/personal_site/app/assets/stylesheets/home.scss */
+.home-content .avid.title {
+  -webkit-animation: heartbeat 3s infinite;
+  /* Safari 4+ */
+  -moz-animation: heartbeat 3s infinite;
+  /* Fx 5+ */
+  -o-animation: heartbeat 3s infinite;
+  /* Opera 12+ */
+  animation: heartbeat 3s infinite;
+  /* IE 10+, Fx 29+ */
+}
+
+/* Navigation */
+/* line 220, /home/frank/Documents/personal_site/app/assets/stylesheets/home.scss */
+.home-navigation {
+  position: relative;
+  top: 30%;
+  /*5 + .home-content top*/
+  margin: 0 auto;
+  width: 210px;
+  height: 32px;
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+}
+
+/* line 234, /home/frank/Documents/personal_site/app/assets/stylesheets/home.scss */
+.home-navigation .switch {
+  position: absolute;
+  /* width == height */
+  width: 32px;
+  height: 100%;
+  -ms-transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+
+/* line 245, /home/frank/Documents/personal_site/app/assets/stylesheets/home.scss */
+.home-navigation .switch.active {
+  cursor: default;
+}
+
+/* line 246, /home/frank/Documents/personal_site/app/assets/stylesheets/home.scss */
+.home-navigation .tech.switch {
+  left: 33.33%;
+}
+
+/* line 248, /home/frank/Documents/personal_site/app/assets/stylesheets/home.scss */
+.home-navigation .creative.switch {
+  left: 66.66%;
+}
+
+/* line 250, /home/frank/Documents/personal_site/app/assets/stylesheets/home.scss */
+.home-navigation .avid.switch {
+  left: 100%;
+}
+
+/* line 253, /home/frank/Documents/personal_site/app/assets/stylesheets/home.scss */
+.home-navigation .switch .block {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 3px;
+  -ms-transform: scale(0.531);
+  -webkit-transform: scale(0.531);
+  transform: scale(0.531);
+  transition: all 0.15s ease;
+  -webkit-transition: all 0.15s ease;
+}
+
+/* line 267, /home/frank/Documents/personal_site/app/assets/stylesheets/home.scss */
+.home-navigation .switch:hover .block {
+  -ms-transform: scale(0.625);
+  -webkit-transform: scale(0.625);
+  transform: scale(0.625);
+}
+
+/* line 271, /home/frank/Documents/personal_site/app/assets/stylesheets/home.scss */
+.home-navigation .name.switch:hover .block {
+  background-color: #8d8d8d;
+}
+
+/* line 273, /home/frank/Documents/personal_site/app/assets/stylesheets/home.scss */
+.home-navigation .tech.switch:hover .block {
+  background-color: #47cf73;
+}
+
+/* line 275, /home/frank/Documents/personal_site/app/assets/stylesheets/home.scss */
+.home-navigation .creative.switch:hover .block {
+  background-color: #0ebeff;
+}
+
+/* line 277, /home/frank/Documents/personal_site/app/assets/stylesheets/home.scss */
+.home-navigation .avid.switch:hover .block {
+  background-color: #ff4646;
+}
+
+/* line 279, /home/frank/Documents/personal_site/app/assets/stylesheets/home.scss */
+.home-navigation .active.switch .block {
+  visibility: hidden;
+  opacity: 0;
+  -ms-transform: scale(0);
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+
+/* line 286, /home/frank/Documents/personal_site/app/assets/stylesheets/home.scss */
+.home-navigation .switch .icon {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  opacity: 0;
+  -ms-transform: scale(0);
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  transition: all 0.4s ease;
+  -webkit-transition: all 0.4s ease;
+}
+
+/* line 300, /home/frank/Documents/personal_site/app/assets/stylesheets/home.scss */
+.home-navigation .active.switch .icon {
+  visibility: visible;
+  opacity: 1;
+  background-position: center center;
+  background-size: cover;
+  -ms-transform: scale(1);
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+/* line 310, /home/frank/Documents/personal_site/app/assets/stylesheets/home.scss */
+.home-navigation .name.switch .icon {
+  background-image: url("/assets/icons/profile_grey-1b296fc63dfa93c2bf1fa8dea5b63300daf1f4c32ae03b2698d7ebe73bf4e7ce.png");
+}
+
+/* line 312, /home/frank/Documents/personal_site/app/assets/stylesheets/home.scss */
+.home-navigation .tech.switch .icon {
+  background-image: url("/assets/icons/desktop_green-a9fd8e196028f87a32a5edbb195c2f833a3196d60b9d6dc01419dfe33ca8b6ce.png");
+}
+
+/* line 314, /home/frank/Documents/personal_site/app/assets/stylesheets/home.scss */
+.home-navigation .creative.switch .icon {
+  background-image: url("/assets/icons/pencil_blue-b0a8e780909e5b87b17c6624007a089b28f053828d882cfa44da5a2c318b53d8.png");
+}
+
+/* line 318, /home/frank/Documents/personal_site/app/assets/stylesheets/home.scss */
+.heart {
+  background-image: url("/assets/icons/heart_red-ce8fb0b2793a3c20fea8d4a8aa4fd04055afa0858c4457731109c2e30aebfca1.png");
+  background-position: center center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  -webkit-animation: heartbeat-big 3s infinite;
+  /* Safari 4+ */
+  -moz-animation: heartbeat-big 3s infinite;
+  /* Fx 5+ */
+  -o-animation: heartbeat-big 3s infinite;
+  /* Opera 12+ */
+  animation: heartbeat-big 3s infinite;
+  /* IE 10+, Fx 29+ */
+}
+
+/*Heartbeat Animation*/
+@-webkit-keyframes heartbeat {
+  0% {
+    -webkit-transform: scale(1.0488);
+  }
+  4% {
+    -webkit-transform: scale(1);
+  }
+  8% {
+    -webkit-transform: scale(1.0954);
+  }
+  13% {
+    -webkit-transform: scale(1);
+  }
+  94% {
+    -webkit-transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1.0488);
+  }
+}
+@-moz-keyframes heartbeat {
+  0% {
+    -webkit-transform: scale(1.0488);
+  }
+  4% {
+    -webkit-transform: scale(1);
+  }
+  8% {
+    -webkit-transform: scale(1.0954);
+  }
+  13% {
+    -webkit-transform: scale(1);
+  }
+  94% {
+    -webkit-transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1.0488);
+  }
+}
+@-o-keyframes heartbeat {
+  0% {
+    -webkit-transform: scale(1.0488);
+  }
+  4% {
+    -webkit-transform: scale(1);
+  }
+  8% {
+    -webkit-transform: scale(1.0954);
+  }
+  13% {
+    -webkit-transform: scale(1);
+  }
+  94% {
+    -webkit-transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1.0488);
+  }
+}
+@keyframes heartbeat {
+  0% {
+    -webkit-transform: scale(1.0488);
+  }
+  4% {
+    -webkit-transform: scale(1);
+  }
+  8% {
+    -webkit-transform: scale(1.0954);
+  }
+  13% {
+    -webkit-transform: scale(1);
+  }
+  94% {
+    -webkit-transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1.0488);
+  }
+}
+/* Big Heartbeat Animation*/
+@-webkit-keyframes heartbeat-big {
+  0% {
+    -webkit-transform: scale(1.0954);
+  }
+  4% {
+    -webkit-transform: scale(1);
+  }
+  8% {
+    -webkit-transform: scale(1.1832);
+  }
+  13% {
+    -webkit-transform: scale(1);
+  }
+  94% {
+    -webkit-transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1.0954);
+  }
+}
+@-moz-keyframes heartbeat-big {
+  0% {
+    -webkit-transform: scale(1.0954);
+  }
+  4% {
+    -webkit-transform: scale(1);
+  }
+  8% {
+    -webkit-transform: scale(1.1832);
+  }
+  13% {
+    -webkit-transform: scale(1);
+  }
+  94% {
+    -webkit-transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1.0954);
+  }
+}
+@-o-keyframes heartbeat-big {
+  0% {
+    -webkit-transform: scale(1.0954);
+  }
+  4% {
+    -webkit-transform: scale(1);
+  }
+  8% {
+    -webkit-transform: scale(1.1832);
+  }
+  13% {
+    -webkit-transform: scale(1);
+  }
+  94% {
+    -webkit-transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1.0954);
+  }
+}
+@keyframes heartbeat-big {
+  0% {
+    -webkit-transform: scale(1.0954);
+  }
+  4% {
+    -webkit-transform: scale(1);
+  }
+  8% {
+    -webkit-transform: scale(1.1832);
+  }
+  13% {
+    -webkit-transform: scale(1);
+  }
+  94% {
+    -webkit-transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1.0954);
+  }
+}
+/* Responsive */
+/* Desktop */
+@media only screen and (min-width: 1500px) {
+  /* line 402, /home/frank/Documents/personal_site/app/assets/stylesheets/home.scss */
+  .home-content .home-details {
+    width: 33.33%;
+    max-width: 400px;
+  }
+}
+/* Mobile */
+@media only screen and (max-width: 1024px) and (min-height: 1024px) {
+  /* line 409, /home/frank/Documents/personal_site/app/assets/stylesheets/home.scss */
+  .home-content .details {
+    font-size: 28px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  /* line 414, /home/frank/Documents/personal_site/app/assets/stylesheets/home.scss */
+  .home-content .home-details {
+    width: 70%;
+  }
+}
+@media only screen and (max-width: 515px) {
+  /*.home-content .home-titles {
+  	height: 50%;
+  }*/
+  /* line 422, /home/frank/Documents/personal_site/app/assets/stylesheets/home.scss */
+  .home-content .details {
+    font-size: 18px;
+  }
+
+  /* line 425, /home/frank/Documents/personal_site/app/assets/stylesheets/home.scss */
+  .home-navigation {
+    top: 30%;
+  }
+
+  /* line 428, /home/frank/Documents/personal_site/app/assets/stylesheets/home.scss */
+  .home-navigation .switch:hover .block {
+    background-color: #fff !important;
+  }
+}
+@media only screen and (max-width: 400px) {
+  /* line 433, /home/frank/Documents/personal_site/app/assets/stylesheets/home.scss */
+  .home-content .home-details {
+    width: 80%;
+  }
+}
+@media only screen and (max-width: 350px) {
+  /* line 438, /home/frank/Documents/personal_site/app/assets/stylesheets/home.scss */
+  .home-navigation {
+    top: 35%;
+  }
+}
+@media only screen and (max-width: 414px) and (min-height: 650px) {
+  /* line 443, /home/frank/Documents/personal_site/app/assets/stylesheets/home.scss */
+  .home-content .home-titles {
+    height: 50%;
+  }
+}
+@media only screen and (max-height: 550px) {
+  /* line 448, /home/frank/Documents/personal_site/app/assets/stylesheets/home.scss */
+  .home-content .home-titles {
+    height: 60%;
+  }
+
+  /* line 451, /home/frank/Documents/personal_site/app/assets/stylesheets/home.scss */
+  .home-content .details {
+    font-size: 16px;
+  }
+
+  /* line 454, /home/frank/Documents/personal_site/app/assets/stylesheets/home.scss */
+  .home-content {
+    top: 15%;
+  }
+}
+/* line 10, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+.project-list {
+  width: 70%;
+  max-width: 1250px;
+  min-width: 1020px;
+  margin: 0 auto;
+  margin-bottom: 35px;
+}
+
+/* line 17, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+.project-list .project-block {
+  display: inline-block;
+  width: 33%;
+  min-width: 335px;
+  margin-top: 45px;
+}
+
+@media only screen and (max-width: 1000px) {
+  /* line 25, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+  .project-list {
+    width: 85%;
+    min-width: 680px;
+  }
+
+  /* line 28, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+  .project-list .project-block {
+    width: 49.5%;
+    margin-top: 40px;
+  }
+}
+@media only screen and (max-width: 515px) {
+  /* line 35, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+  .project-list {
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    margin-bottom: 10px;
+  }
+
+  /* line 41, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+  .project-list .project-block {
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    margin-bottom: 23px;
+  }
+
+  /* line 47, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+  .project-list .project-block:first-child {
+    margin-top: 20px;
+  }
+}
+/* Project Card */
+/* line 53, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+.project-card {
+  position: relative;
+  margin: 0 auto;
+  width: 85%;
+  padding-top: 63.542%;
+  /* 305 / 408 * width */
+  height: 0;
+  background-color: #2f2f31;
+  border: 5px solid #2f2f31;
+  border-radius: 3px;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.28);
+}
+
+/* line 64, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+.project-card * {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 68, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+.project-card .project-contents {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+
+/* line 76, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+.project-cover {
+  position: relative;
+  /*height: 75%;*/
+  height: 0;
+  padding-top: 56.25%;
+  overflow: hidden;
+}
+
+/* line 83, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+.project-cover .cover-link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  border: 0 !important;
+  z-index: 1;
+  cursor: pointer;
+}
+
+/* line 94, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+.project-cover .cover-overlay {
+  white-space: pre-line;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(68, 68, 68, 0.95);
+  padding: 12px 15px;
+  -webkit-filter: opacity(0%);
+  filter: opacity(0%);
+  -webkit-transition: filter 0.15s ease;
+  transition: filter 0.15s ease;
+}
+
+@media only screen and (min-width: 516px) {
+  /* line 111, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+  .project-cover:hover .cover-overlay {
+    -webkit-filter: opacity(100%);
+    filter: opacity(100%);
+  }
+}
+/* line 116, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+.project-cover .cover-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center center;
+  background-size: cover;
+}
+
+/* line 126, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+.project-meta {
+  /*color: #aaa;*/
+  /*background-color: $secondary-background-color;*/
+  padding: 5px 10px 0px 10px;
+  height: 25%;
+  white-space: nowrap;
+}
+
+/* line 134, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+.project-meta .meta-left,
+.project-meta .meta-right {
+  position: relative;
+  height: 100%;
+  float: left;
+}
+
+/* line 140, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+.project-meta .meta-left {
+  width: 68%;
+}
+
+/* line 142, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+.project-meta .meta-right {
+  width: 32%;
+  /* 68 + 32 = 100 */
+}
+
+/* line 147, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+.project-meta .meta-title,
+.project-meta .meta-subtitle {
+  position: absolute;
+  margin: 0 auto;
+  font-weight: bold;
+  max-width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+/* line 158, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+.project-meta .meta-title {
+  top: 33.33%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+/* line 162, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+.project-meta .meta-subtitle {
+  margin-top: 0.1822em;
+  margin-bottom: 0.15em;
+  top: 66.66%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+/* line 169, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+.project-meta .meta-subtitle {
+  color: #f3f3f3;
+}
+
+/* line 173, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+.project-meta .meta-skills {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+/* line 181, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+.project-meta .meta-skills .meta-skill {
+  position: relative;
+  width: 25.33%;
+  padding-top: 25.33%;
+  height: 0;
+  float: left;
+}
+
+/* line 189, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+.project-meta .meta-skills .meta-skill-1-3:not(:last-child) {
+  margin-right: 12%;
+}
+
+/* line 191, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+.project-meta .meta-skills .meta-skill-1-2:last-child {
+  margin: 0 4% 0 8%;
+}
+
+/* line 193, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+.project-meta .meta-skills .meta-skill-1-2:first-child {
+  margin: 0 8% 0 28%;
+}
+
+/* line 195, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+.project-meta .meta-skills .meta-skill-1-1 {
+  margin: 0 15% 0 60%;
+}
+
+/* line 197, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+.project-meta .meta-skills .meta-skill .skill-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  -webkit-transition: transform 0.15s ease;
+  transition: transform 0.15s ease;
+}
+
+/* line 210, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+.project-meta .meta-skills .meta-skill:hover .skill-image {
+  -ms-transform: scale(1.3);
+  -webkit-transform: scale(1.3);
+  transform: scale(1.3);
+}
+
+/* line 214, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+.project-meta .meta-skills .meta-skill .skill-label {
+  position: absolute;
+  visibility: hidden;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 3px;
+  padding: 1px 5px;
+  font-size: 1em;
+  white-space: nowrap;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+}
+
+/* line 227, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+.project-meta .meta-skills .meta-skill:hover .skill-label {
+  visibility: visible;
+}
+
+/*@media only screen and (max-width: 515px) {
+	.project-meta .meta-skills .meta-skill .skill-label {
+		transform: translateX(-50%);
+		-webkit-transform: translateX(-50%);
+		-ms-transform: translateX(-50%);
+	}
+} */
+/* Project Page */
+/* line 239, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+.project-title,
+.project-subtitle {
+  font-weight: bold;
+}
+
+/* line 242, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+.project-title {
+  margin: 0;
+  margin-top: 15px;
+}
+
+/* line 245, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+.project-subtitle {
+  margin: 2px auto;
+  position: relative;
+  bottom: 5px;
+  color: #f3f3f3;
+}
+
+/* line 254, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+.project-preface,
+.project-postface {
+  width: 100%;
+  display: flex;
+  display: -webkit-flex;
+  margin-bottom: 18px;
+}
+
+/* line 263, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+.project-preface .project-slides {
+  /* 65 + 1.66 = 66.66 */
+  width: 65%;
+  /* 46.8 / 65 = 0.72 */
+  height: 468px;
+  margin-right: 1.66%;
+  overflow: hidden;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.28);
+  border-radius: 3px;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* line 279, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+.project-slides img {
+  /*-ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);*/
+}
+
+/* line 285, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+.project-preface .project-details {
+  width: 33.33%;
+  background-color: #2f2f31;
+  border-radius: 3px;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.28);
+}
+
+/* line 294, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+.project-details .details-main {
+  position: relative;
+  /*height: 100%;*/
+  display: flex;
+  display: -webkit-flex;
+  flex-flow: column;
+  -webkit-flex-flow: column;
+}
+
+/* line 303, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+.project-details .details-main .details-brand {
+  flex: 0;
+  -webkit-flex: 0;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 0;
+  padding-top: 56.25%;
+  /* (img-height / img-width * container-width) */
+}
+
+/* line 315, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+.project-details .details-main .details-snippet-and-skills {
+  flex: 1;
+  -webkit-flex: 1;
+  position: relative;
+  padding: 15px 20px;
+}
+
+/* line 322, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+.details-main .details-snippet-and-skills .details-snippet {
+  white-space: pre-line;
+}
+
+/* line 325, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+.details-main .details-snippet-and-skills .details-skills {
+  position: absolute;
+  /*height: 25%;*/
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  padding: 10px 20px 5px 20px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #f3f3f3;
+}
+
+/* line 338, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+.details-skills h4 {
+  margin: 0;
+  margin-bottom: 3px;
+}
+
+/* line 339, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+.details-skills .details-skill {
+  width: 24px;
+  height: 24px;
+  margin: 5px 0 0 0;
+  display: inline-block;
+}
+
+/* line 345, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+.details-skills .details-skill:not(:last-child) {
+  margin-right: 10px;
+}
+
+/* line 348, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+.details-skills .details-skill .skill-image {
+  width: 100%;
+  height: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  -webkit-transition: transform 0.15s ease;
+  transition: transform 0.15s ease;
+}
+
+/* line 358, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+.details-skills .details-skill:hover .skill-image {
+  -ms-transform: scale(1.3);
+  -webkit-transform: scale(1.3);
+  transform: scale(1.3);
+}
+
+/* line 363, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+.details-skills .details-skill .skill-label {
+  position: absolute;
+  z-index: 1;
+  visibility: hidden;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 3px;
+  padding: 1px 5px;
+  font-size: 1em;
+  white-space: nowrap;
+}
+
+/* line 375, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+.details-skills .details-skill:hover .skill-label {
+  visibility: visible;
+}
+
+/* line 379, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+.project-description {
+  /* 65 + 1.66 = 66.66 */
+  width: 65%;
+  margin-right: 1.66%;
+  min-height: 1px;
+  float: left;
+}
+
+/* line 388, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+.project-sidebar {
+  width: 33.33%;
+  float: left;
+}
+
+/* line 391, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+.project-sidebar * {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 397, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+.sidebar-details {
+  position: relative;
+  padding: 15px 20px;
+  margin-bottom: 18px;
+  width: 100%;
+  background-color: #2f2f31;
+  border-radius: 3px;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.28);
+}
+
+/* line 408, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+.sidebar-details h4 {
+  color: #f3f3f3;
+  margin: 0;
+  /*margin-bottom: 3px;*/
+}
+
+/* line 413, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+.sidebar-details h4:not(:first-child) {
+  margin-top: 20px;
+}
+
+/* line 414, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+.details-misc a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* line 423, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+.details-misc a .icon {
+  position: relative;
+  top: 1px;
+}
+
+/* Slideshow */
+/* line 429, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+.project-postface .slide-block {
+  float: left;
+  position: relative;
+  width: 25%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 9px;
+  bottom: 10px;
+  /*approx == padding*/
+}
+
+/* line 440, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+.project-postface .slide-preview {
+  position: relative;
+  width: 100%;
+  padding-top: 75%;
+  height: 0;
+}
+
+/* line 446, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+.project-postface .slide-preview.active {
+  border: 5px solid #2f2f31;
+  bottom: 5px;
+  right: 5px;
+  border-radius: 3px;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.28);
+}
+
+/* line 453, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+.project-postface .slide-preview:not(.active):hover {
+  border: 5px solid #2f2f31;
+  bottom: 5px;
+  right: 5px;
+  border-radius: 3px;
+}
+
+/* line 459, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+.project-postface .slide-preview .slide-preview-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media only screen and (max-width: 515px) {
+  /* line 473, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+  .project-subtitle {
+    margin: 1px auto;
+  }
+
+  /* line 476, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+  .project-preface .project-slides {
+    display: none;
+  }
+
+  /* line 478, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+  .project-preface .project-details,
+  .project-sidebar {
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  /* line 483, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+  .project-description {
+    display: none;
+  }
+
+  /* line 486, /home/frank/Documents/personal_site/app/assets/stylesheets/projects.scss */
+  .project-back-link {
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+  }
+}
+/* line 1, /home/frank/Documents/personal_site/app/assets/stylesheets/scaffolds.scss */
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 7, /home/frank/Documents/personal_site/app/assets/stylesheets/scaffolds.scss */
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+/* line 13, /home/frank/Documents/personal_site/app/assets/stylesheets/scaffolds.scss */
+th {
+  padding-bottom: 5px;
+}
+
+/* line 17, /home/frank/Documents/personal_site/app/assets/stylesheets/scaffolds.scss */
+td {
+  padding: 0 5px 7px;
+}
+
+/* line 22, /home/frank/Documents/personal_site/app/assets/stylesheets/scaffolds.scss */
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+/* line 27, /home/frank/Documents/personal_site/app/assets/stylesheets/scaffolds.scss */
+#notice {
+  color: green;
+}
+
+/* line 31, /home/frank/Documents/personal_site/app/assets/stylesheets/scaffolds.scss */
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+/* line 37, /home/frank/Documents/personal_site/app/assets/stylesheets/scaffolds.scss */
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px 7px 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+/* line 44, /home/frank/Documents/personal_site/app/assets/stylesheets/scaffolds.scss */
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px -7px 0;
+  background-color: #c00;
+  color: #fff;
+}
+/* line 54, /home/frank/Documents/personal_site/app/assets/stylesheets/scaffolds.scss */
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+/* line 60, /home/frank/Documents/personal_site/app/assets/stylesheets/scaffolds.scss */
+label {
+  display: block;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+
+@font-face {
+	font-family: "Lato";
+	src: url(/assets/fonts/lato-new/Lato-Regular-e735410675eacc363b257112f39eb819a854b03077d7b1f0caa6e7660ffbd8b3.eot) format("embedded-opentype"),
+		url(/assets/fonts/lato-new/Lato-Regular-62b78d21e130d6c3a8c2dde3aa4ec1874ca6b7322e9608757b2f9bc1dda9c841.svg#Lato) format("svg"),
+		url(/assets/fonts/lato-new/Lato-Regular-089ab6d4a57e0e6c4dd3b681b6fd50a5184f1b902429d35e1227e52d6ccad1bd.ttf) format("truetype"),
+		url(/assets/fonts/lato-new/Lato-Regular-5b9025dda4d7688e3311b0c17eddc501133b807def33effaef6593843cf5416e.woff) format("woff");
+	font-weight: normal;
+}
+@font-face {
+	font-family: "Lato";
+	src: url(/assets/fonts/lato-new/Lato-Bold-b91fc1ca55df440dc11354b32a39b45db663d24bb17b16dcb2e706330955b0d1.eot) format("embedded-opentype"),
+		url(/assets/fonts/lato-new/Lato-Bold-4ac129e023df49f4434562d2791053890dba85028ce79d5d79736942db973bb1.svg#Lato) format("svg"),
+		url(/assets/fonts/lato-new/Lato-Bold-f71f833c099f450606f8107b83ef208ae918c0ea00779466d45e9be96b0bc7cc.ttf) format("truetype"),
+		url(/assets/fonts/lato-new/Lato-Bold-0e56b17d142eb366c8007031d14e34da48c70b4a9d9a0ca492e696a7bae45e1e.woff) format("woff");
+	font-weight: bold;
+}
+html, body { height: 100%; }
+body {
+	margin: 0;
+
+	background-color: #242424;
+	color: #fff;
+
+	font-family: "Lato", Sans-Serif;
+	line-height: 1.5;
+	font-size: 15px;
+	font-weight: 400;
+}
+#wrapper {
+	padding: 51px 0 27px 0;
+	min-height: 100%;
+
+	position: relative;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+* {
+	-webkit-backface-visibility: hidden;
+}
+a {
+	color: #fff;
+	-webkit-transition: filter 0.15s ease;
+	transition: filter 0.15s ease;
+} a:hover {
+	-webkit-filter: brightness(0.7);
+	filter: brightness(0.7);
+}
+
+/* Structure */
+.full-height { height: 100%; }
+.full-width { width: 100%; }
+.full-container {
+	margin: 0 auto;
+	width: 100%;
+}
+.large-container {
+	margin: 0 auto;
+	width: 1000px;
+}
+.medium-container {
+	margin: 0 auto;
+	width: 750px;
+}
+.small-container {
+	margin: 0 auto;
+	width: 500px;
+}
+@media only screen and (max-width: 515px) {
+	.large-container {
+		margin: 0 auto;
+		width: 85%;
+	}
+}
+.row {
+	width: 100%;
+	display: inline-block;
+}
+.row-flex {
+	width: 100%;
+	display: flex;
+	display: -webkit-flex;
+}
+.col {
+	float: left;
+	min-height: 1px;
+}
+.col-flex {
+	-webkit-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+}
+.col-1-2 {		width: 50%;		}
+.col-1-3 {		width: 33.33%;	}
+.col-2-3 {		width: 66.66%;	}
+.col-1-6 {		width: 16.66%;	}
+.col-2-6 {		width: 33.33%;	}
+.col-3-6 {		width: 50%;		}
+.col-4-6 {		width: 66.66%;	}
+.col-5-6 {		width: 83.33%;	}
+.col-1-12 {		width: 8.33%;	}
+.col-2-12 {		width: 16.66%;	}
+.col-3-12 {		width: 25%;		}
+.col-4-12 {		width: 33.33%;	}
+.col-5-12 {		width: 41.66%;	}
+.col-6-12 {		width: 50%;		}
+.col-7-12 {		width: 58.33%;	}
+.col-8-12 {		width: 66.66%;	}
+.col-9-12 {		width: 75%;		}
+.col-10-12 {	width: 83.33%;	}
+.col-11-12 {	width: 91.66%;	}
+
+.left {		float: left;	}
+.right {	float: right;	}
+.center {	margin: 0 auto;	}
+.content-center {	text-align: center;		}
+.content-right {	text-align: right;		}
+.content-vertical-center {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+}
+/* Styles */
+table {
+	margin: 0 auto;
+}
+.grey-text {
+	color: #999;
+}
+.grey {
+	background-color: #999;
+}
+.section {
+	background-color: #2f2f31;
+	border: 5px solid #2f2f31;
+	border-radius: 3px;
+
+	box-shadow: 2px 2px 3px rgba(0,0,0,0.28);
+}
+.icon {
+	display: inline-block;
+
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+} .icon-12x12 {
+	width: 12px;
+	height: 12px;
+} .icon-16x16 {
+	width: 16px;
+	height: 16px;
+} .icon-20x20 {
+	width: 20px;
+	height: 20px;
+} .icon-24x24 {
+	width: 24px;
+	height: 24px;
+} .icon-32x32 {
+	width: 32px;
+	height: 32px;
+}
+/* Functionality */
+.has-tooltip {
+	-webkit-transition: filter 0.15s ease;
+	transition: filter 0.15s ease;
+}
+.has-tooltip:hover {
+	/*-webkit-filter: brightness(0.7);*/
+	/*filter: brightness(0.7);*/
+}
+.tooltip {
+	color: grey;
+	display: none;
+	-webkit-transition: filter 0.15s ease;
+	transition: filter 0.15s ease;
+}
+.has-tooltip:hover .tooltip {
+	display: block;
+	-webkit-filter: brightness(1.429);
+	filter: brightness(1.429);
+}
+#navbar {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 51px;
+
+	background-color: transparent;
+} #navbar.is-fixed {
+	position: fixed;
+	top: 0;
+	z-index: 100;
+
+	transform: translateY(-100%);
+	-webkit-transform: translateY(-100%);
+	-ms-transform: translateY(-100%);
+} #navbar.is-visible {
+	background-color: rgba(20, 20, 20, 0.9);
+
+	transform: none;
+	-webkit-transform: none;
+	-ms-transform: none;
+
+	transition: all 0.2s ease;
+	-webkit-transition: all 0.2s ease;
+}
+#navbar .navlinks {
+	position: absolute;
+	top: 17px;
+	right: 32px;
+	/* height = font-size */
+	height: 17px;
+
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 1.2em;
+	line-height: normal;
+} .navlinks a {
+	text-decoration: none;
+
+} .navlinks a:not(:last-child) {
+	margin-right: 15px;
+} #navbar.is-fixed .navlinks a {
+	color: #d8d8d8;
+}
+#navbar .hamburger {
+	display: none;
+}
+
+@media only screen and (max-width: 515px) {
+	/*Links*/
+	#navbar .navlinks {
+		visibility: hidden;
+		opacity: 0;
+
+		transform: translateX(-100%);
+		-webkit-transform: translateX(-100%);
+		-ms-transform: translateX(-100%);
+
+		transition: all 0.2s ease;
+		-webkit-transition: all 0.2s ease;
+	}
+	#navbar.active .navlinks {
+		visibility: visible;
+		opacity: 1;
+
+		transform: none;
+		-webkit-transform: none;
+		-ms-transform: none;
+
+		margin-right: 20px;
+		top: 15px;
+		right: 0;
+	}
+	/*HAMBURGER*/
+	#navbar .hamburger {
+		position: relative;
+		top: 50%;
+		transform: translate(70%, -50%);
+		-webkit-transform: translate(70%, -50%);
+		-ms-transform: translate(70%, -50%);
+
+		width: 24px;
+		height: 24px;
+		display: inline-block;
+
+		cursor: pointer;
+	}
+	#navbar .hamburger-icon {
+		transform: scale(1);
+		-webkit-transform: scale(1);
+		-ms-transform: scale(1);
+	} #navbar .close-icon {
+		background-image: url();
+
+		transform: scale(0);
+		-webkit-transform: scale(0);
+		-ms-transform: scale(0);
+	} #navbar .hamburger-icon,
+	#navbar .close-icon {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+
+		background-position: center center;
+		background-size: cover;
+
+		transition: all 0.4s ease;
+		-webkit-transition: all 0.4s ease;
+	} #navbar.active .hamburger-icon {
+		transform: scale(0);
+		-webkit-transform: scale(0);
+		-ms-transform: scale(0);
+	} #navbar.active .close-icon {
+		transform: scale(1);
+		-webkit-transform: scale(1);
+		-ms-transform: scale(1);
+	}
+}
+
+#footer {
+	position: absolute;
+	right: 10px;
+	bottom: 5px;
+
+	color: #8a8a8a;
+	font-size: 1.2em;
+	text-transform: uppercase;
+	/* font-weight: bold; */
+	letter-spacing: 3px;
+}
+#footer,
+#footer .copyright,
+#footer .social-links,
+#footer .icon {
+	height: 27px;
+	display: inline-block;
+}
+#footer .copyright {
+	position: relative;
+    bottom: 5px;
+}
+#footer .social-links {
+	float: right;
+
+	position: relative;
+	bottom: 7px;
+
+	margin-left: 10px;
+	margin-right: 5px;
+}
+#footer .icon {
+	width: 27px;
+	border-radius: 3px;
+
+	margin-right: 2px;
+}
+
+@media only screen and (max-width: 515px) {
+	#footer {
+		width: 100%;
+		right: 0;
+		bottom: 0;
+	}
+	#footer .copyright {
+		display: block;
+		width: 100%;
+		margin: 6px auto;
+
+		text-align: center;
+		bottom: 6px;
+	}
+	#footer .mobile-divider {
+		width: 30%;
+		height: 2px;
+		border-radius: 1px;
+		background-color: #8a8a8a;
+
+		display: inline-block;
+	}
+	#footer .social-links {
+		float: none;
+		position: relative;
+    	left: 50%;
+
+    	transform: translateX(-50%);
+    	-webkit-transform: translateX(-50%);
+    	-ms-transform: translateX(-50%);
+
+    	margin: 0;
+    	margin-bottom: 5px;
+	} #footer .icon {
+		margin: 0;
+	} #footer .icon:first-child {
+		margin-right: 6px;
+	}
+}
