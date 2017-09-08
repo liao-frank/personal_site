@@ -20,10 +20,13 @@
 		url(<%= asset_path("fonts/lato-new/Lato-Regular.ttf") %>) format("truetype"),
 		url(<%= asset_path("fonts/lato-new/Lato-Regular.woff") %>) format("woff");
 	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
 	speak: none;
 	-webkit-font-smoothing: antialiased;
 	font-smoothing: antialiased;
-	text-rendering: optimizeLegibility;
 }
 @font-face {
 	font-family: "Lato";
@@ -32,10 +35,13 @@
 		url(<%= asset_path("fonts/lato-new/Lato-Bold.ttf") %>) format("truetype"),
 		url(<%= asset_path("fonts/lato-new/Lato-Bold.woff") %>) format("woff");
 	font-weight: bold;
+	font-style: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
 	speak: none;
 	-webkit-font-smoothing: antialiased;
 	font-smoothing: antialiased;
-	text-rendering: optimizeLegibility;
 }
 html, body { height: 100%; }
 body {
@@ -48,6 +54,8 @@ body {
 	line-height: 1.5;
 	font-size: 15px;
 	font-weight: 400;
+
+	text-rendering: optimizeLegibility;
 }
 #wrapper {
 	padding: 51px 0 27px 0;
