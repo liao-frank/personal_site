@@ -34,7 +34,15 @@
 			</div>
 			<%= yield %>
 			<div id="footer">
-				© Frank Liao 2017
+				<!-- <div class="mobile-divider"></div> -->
+				<div class="social-links">
+					<a class="github icon" href="https://github.com/liao-frank" target="_blank" style="background-image: url(<%= discover_image("icons/github_grey.png") %>);"></a>
+					<a class="linkedin icon" href="https://www.linkedin.com/in/fliao/" target="_blank" style="background-image: url(<%= discover_image("icons/linkedin_grey.png") %>);"></a>
+				</div>
+				<!-- <div class="mobile-divider"></div> -->
+				<div class="copyright">
+					© Frank Liao 2017
+				</div>
 			</div>
 		</div>
 	</body>

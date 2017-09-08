@@ -415,7 +415,7 @@ $red: #ff4646;
 		width: 70%;
 	}
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 515px) {
 	/*.home-content .home-titles {
 		height: 50%;
 	}*/
@@ -424,9 +424,6 @@ $red: #ff4646;
 	}
 	.home-navigation {
 		top: 30%;
-	}
-	#footer {
-		visibility: hidden;
 	}
 	.home-navigation .switch:hover .block {
 		background-color: #fff !important;

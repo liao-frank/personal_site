@@ -1,7 +1,6 @@
 function resetHelloiaman() {
 	$('.home-content .i-am').removeAttr('style');
 	$('.home-content .i-am span').removeAttr('style');
-	maxFillText('.home-content .i-am');
 }
 function helloiaman(section) {
 	// resetHelloiaman();
