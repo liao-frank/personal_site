@@ -108,12 +108,10 @@
 	$(window).on('load', function() {
 		maxFillText('.text-fill');
 
-		maxFillText('.i-am', successFunction=function() {
+		maxFillText('.i-am', completion=function() {
 			switchToHome('.name');
 			console.log('Successfully filled text on window load.');
-		}, failureFunction=function() {
-			console.log('Failure to fill text on window load.');
-		});
+		};
 		switchToHome('.name');
 		// setTimeout(function() {switchToHome('.name');}, 150);
 

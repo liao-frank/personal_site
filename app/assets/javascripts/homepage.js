@@ -6,6 +6,7 @@ function helloiaman(section) {
 	// resetHelloiaman();
 
 	let WIDTH = $('.home-content .i-am span').width();
+	console.log(WIDTH);
 	var section_width;
 	var offset;
 
@@ -28,13 +29,10 @@ function helloiaman(section) {
 		'transform': 'translateX(-' + offset.toString() + '%)'
 	});
 }
-function maxFillText(selector, successFunction=function(){}, failureFunction=function(){}) {
+function maxFillText(selector, completion=function(){}) {
 	$(selector).textfill({
-        success: function() {
+        complete: function() {
 		    successFunction();
-		},
-		fail: function() {
-		    failureFunction();
 		}, maxFontPixels: 0
     });
 }
