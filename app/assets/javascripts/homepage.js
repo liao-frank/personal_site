@@ -1,3 +1,9 @@
+function daWidth(event) {
+	let jquery_width = $('.home-content .i-am span').width();
+	let js_width = document.querySelector('.home-content .i-am span').offsetWidth;
+
+	console.log(event + " - jquery:" + jquery_width + ", js:" + js_width);
+}
 function resetHelloiaman() {
 	$('.home-content .i-am').removeAttr('style');
 	$('.home-content .i-am span').removeAttr('style');
@@ -5,7 +11,7 @@ function resetHelloiaman() {
 function helloiaman(section) {
 	// resetHelloiaman();
 
-	let WIDTH = $('.home-content .i-am span').width();
+	let WIDTH = document.querySelector('.home-content .i-am span').offsetWidth;
 	// console.log(WIDTH);
 	var section_width;
 	var offset;
