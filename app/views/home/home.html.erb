@@ -104,16 +104,14 @@
 </div>
 <script>
 	resetHelloiaman();
+	var current = "";
 
-	$(window).on('load', function() {
-		maxFillText('.text-fill');
+	window.onload = function() {
 
-		maxFillText('.i-am', completion=function() {
+		maxFillText('.text-fill', completion=function() {
 			switchToHome('.name');
 			console.log('Successfully filled text on window load.');
 		});
-		switchToHome('.name');
-		// setTimeout(function() {switchToHome('.name');}, 150);
 
 		$('.name.switch').on('touchstart click', function(e) {
 			e.preventDefault();
@@ -131,5 +129,10 @@
 			e.preventDefault();
 			switchToHome('.avid');
 		});
-	});
+	};
+	window.onresize = function() {
+		maxFillText('.text-fill', completion=function() {
+			switchToHome(current);
+		});
+	};
 </script>

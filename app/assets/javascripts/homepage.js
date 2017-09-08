@@ -30,6 +30,7 @@ function helloiaman(section) {
 	});
 }
 function maxFillText(selector, completion=function(){}) {
+	$(selector).removeAttr('style');
 	$(selector).textfill({
         complete: function() {
 		    completion();
@@ -74,4 +75,6 @@ function switchToHome(selector) {
 	if (selector == ".tech") {
 		randimateTechTitle();
 	}
+
+	current = selector;
 }
