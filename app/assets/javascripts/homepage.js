@@ -32,7 +32,7 @@ function helloiaman(section) {
 function maxFillText(selector, completion=function(){}) {
 	$(selector).textfill({
         complete: function() {
-		    successFunction();
+		    completion();
 		}, maxFontPixels: 0
     });
 }
