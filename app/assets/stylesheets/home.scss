@@ -30,6 +30,7 @@ $red: #ff4646;
 	-webkit-transition: width $medium-transition;
 } .home-content .i-am span {
 	display: inline-block;
+	display: -webkit-inline-block;
 	white-space: nowrap;
 
 	transition: transform $medium-transition;
