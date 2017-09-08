@@ -21,6 +21,7 @@ $red: #ff4646;
 	cursor: default;
 }
 .home-content .i-am {
+	position: relative;
 	margin: 0 auto;
 	overflow: hidden;
 
@@ -29,8 +30,8 @@ $red: #ff4646;
 	transition: width $medium-transition;
 	-webkit-transition: width $medium-transition;
 } .home-content .i-am span {
-	display: inline-block;
-	display: -webkit-inline-block;
+	position: absolute;
+	display: block;
 	white-space: nowrap;
 
 	transition: transform $medium-transition;
