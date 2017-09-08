@@ -14,11 +14,11 @@
  *= require_self
  */
 @font-face {
-	font-family: "Lato";
-	src: url(<%= asset_path("fonts/lato-new/Lato-Regular.eot") %>) format("embedded-opentype"),
-		url(<%= asset_path("fonts/lato-new/Lato-Regular.svg") %>#Lato) format("svg"),
-		url(<%= asset_path("fonts/lato-new/Lato-Regular.ttf") %>) format("truetype"),
-		url(<%= asset_path("fonts/lato-new/Lato-Regular.woff") %>) format("woff");
+	font-family: "mylato";
+	src: url(<%= asset_path("fonts/mylato/Lato-Regular.eot") %>) format("embedded-opentype"),
+		url(<%= asset_path("fonts/mylato/lato-regular-webfont.svg") %>#mylato) format("svg"),
+		url(<%= asset_path("fonts/mylato/Lato-Regular.ttf") %>) format("truetype"),
+		url(<%= asset_path("fonts/mylato/Lato-Regular.woff") %>) format("woff");
 	font-weight: normal;
 	font-style: normal;
 
@@ -26,11 +26,11 @@
 	/*-webkit-font-smoothing: subpixel-antialiased;*/
 }
 @font-face {
-	font-family: "Lato";
-	src: url(<%= asset_path("fonts/lato-new/Lato-Bold.eot") %>) format("embedded-opentype"),
-		url(<%= asset_path("fonts/lato-new/Lato-Bold.svg") %>#Lato) format("svg"),
-		url(<%= asset_path("fonts/lato-new/Lato-Bold.ttf") %>) format("truetype"),
-		url(<%= asset_path("fonts/lato-new/Lato-Bold.woff") %>) format("woff");
+	font-family: "mylato";
+	src: url(<%= asset_path("fonts/mylato/Lato-Bold.eot") %>) format("embedded-opentype"),
+		url(<%= asset_path("fonts/mylato/lato-bold-webfont.svg") %>#mylato) format("svg"),
+		url(<%= asset_path("fonts/mylato/Lato-Bold.ttf") %>) format("truetype"),
+		url(<%= asset_path("fonts/mylato/Lato-Bold.woff") %>) format("woff");
 	font-weight: bold;
 	font-style: normal;
 
@@ -40,13 +40,14 @@
 html, body { height: 100%; }
 body {
 	-webkit-text-size-adjust: none;
-	
+
 	margin: 0;
 
 	background-color: #242424;
 	color: #fff;
 
-	font-family: "Lato", Sans-Serif;
+	/*font-family: "mylato", Sans-Serif;*/
+	font-family: Arial, Helvetica, sans-serif;
 	line-height: 1.5;
 	font-size: 15px;
 	font-weight: 400;

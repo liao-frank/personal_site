@@ -113,7 +113,6 @@
 			daWidth("in callback, before switch");
 			switchToHome('.name');
 			daWidth("in callback, after switch");
-			// console.log('Successfully filled text on window load.');
 		});
 		daWidth("after callback");
 		$('.name.switch').on('touchstart click', function(e) {
@@ -133,6 +132,10 @@
 			switchToHome('.avid');
 		});
 		daWidth("end of onload");
+
+		setTimeout(function() {
+			switchToHome('.name');
+		}, 150);
 	};
 	window.onresize = function() {
 		maxFillText('.text-fill', completion=function() {
