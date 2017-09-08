@@ -28,10 +28,15 @@ function helloiaman(section) {
 		'transform': 'translateX(-' + offset.toString() + '%)'
 	});
 }
-function maxFillText(selector) {
+function maxFillText(selector, successFunction=function(){}, failureFunction=function(){}) {
 	$(selector).textfill({
-		maxFontPixels: 0
-	});
+        success: function() {
+		    successFunction();
+		},
+		fail: function() {
+		    failureFunction();
+		}, maxFontPixels: 0
+    });
 }
 function randimateTechTitle() {
 	let LENGTH = 700;

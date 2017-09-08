@@ -104,13 +104,15 @@
 </div>
 <script>
 	resetHelloiaman();
-	maxFillText('.text-fill');
 
 	$(window).on('load', function() {
-		switchToHome('.name');
-		// setTimeout(function() {
-		// 	switchToHome('.name');
-		// }, 100);
+		maxFillText('.text-fill', successFunction=function() {
+			switchToHome('.name');
+			// console.log('Successfully filled text on window load.');
+		}, failureFunction=function() {
+			console.log('Failure to fill text on window load.');
+		});
+		
 
 		$('.name.switch').on('touchstart click', function(e) {
 			e.preventDefault();
