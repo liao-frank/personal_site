@@ -6,7 +6,7 @@ function helloiaman(section) {
 	// resetHelloiaman();
 
 	let WIDTH = $('.home-content .i-am span').width();
-	console.log(WIDTH);
+	// console.log(WIDTH);
 	var section_width;
 	var offset;
 

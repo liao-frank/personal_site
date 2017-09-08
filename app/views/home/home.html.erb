@@ -107,10 +107,9 @@
 	var current = "";
 
 	window.onload = function() {
-
 		maxFillText('.text-fill', completion=function() {
 			switchToHome('.name');
-			console.log('Successfully filled text on window load.');
+			// console.log('Successfully filled text on window load.');
 		});
 
 		$('.name.switch').on('touchstart click', function(e) {
