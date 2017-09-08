@@ -106,11 +106,11 @@
 	resetHelloiaman();
 	maxFillText('.text-fill');
 
-	$(document).on('turbolinks:load', function() {
+	$(window).on('turbolinks:load', function() {
 		switchToHome('.name');
-		setTimeout(function() {
-			switchToHome('.name');
-		}, 200);
+		// setTimeout(function() {
+		// 	switchToHome('.name');
+		// }, 200);
 
 		$('.name.switch').on('touchstart click', function(e) {
 			e.preventDefault();
