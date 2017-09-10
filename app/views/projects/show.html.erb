@@ -3,6 +3,7 @@
 	<h4 class="project-subtitle"><%= @project.subtitle %></h4>
 	<div class="project-preface">
 		<div class="project-slides" style="background-image: url(<%= discover_image(@project.cover_url) %>);">
+			<iframe src="" frameborder="0" allowfullscreen></iframe>
 			<div class="project-slides-background"></div>
 		</div>
 		<div class="project-details">
@@ -25,6 +26,10 @@
 				<div class="slide-block" onclick="switchSlides(this, '<%= discover_image(project_image.img_url) %>');">
 					<div class="slide-preview">
 						<div class="slide-preview-image" style="background-image: url(<%= discover_image(project_image.img_url) %>);"></div>
+						<!-- If youtube video, add white play button -->
+						<% if /img\.youtube\.com/.match(project_image.img_url) %>
+							<div class="slide-preview-play" style="background-image: url(<%= discover_image('icons/play_button_white.png') %>);"></div>
+						<% end %>
 					</div>
 				</div>
 			<% end %>
