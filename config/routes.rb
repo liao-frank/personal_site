@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 		get 'about' => 'home#about', as: :about
 		get 'browse' => 'projects#browse', as: :browse
 	else
-		# get 'about' => 'home#about', as: :about
+		get 'about' => 'home#about', as: :about
 		get 'projects/:id' => 'projects#show', as: :project
 		get 'projects' => 'projects#browse', as: :browse
 	end

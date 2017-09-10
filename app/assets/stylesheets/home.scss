@@ -458,3 +458,36 @@ $red: #ff4646;
 	}
 
 }
+
+/*ABOUT*/
+.about-page .under-construction {
+	position: relative;
+	width: 33.33%;
+	padding-top: 33.33%;
+
+	margin: 0 auto;
+} .about-page .under-construction .under-construction-image {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0; left: 0;
+
+	background-size: contain;
+} .about-page .introduction {
+	white-space: pre-line;
+	text-align: center;
+} .about-page .introduction h2,
+.about-page .introduction h3, {
+	text-transform: uppercase;
+	margin: 0 auto;
+}
+
+@media only screen and (max-width: 515px) {
+	.about-page .under-construction {
+		width: 70%;
+		padding-top: 70%;
+	}
+	.about-page .resume {
+		margin-bottom: 20px;
+	}
+}

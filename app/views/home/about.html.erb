@@ -1,11 +1,26 @@
 <div class="about-page">
 	<div class="large-container">
+		<div class="under-construction">
+			<div class="under-construction-image" style="background-image: url('<%= discover_image('icons/under_construction.png') %>');"></div>
+		</div>
 		<div class="introduction">
+			<h2 style="text-decoration: underline;">This page is under construction!</h2>
+
+			<h3>About me</h3>
 			I'm student from Carnegie Mellon pursuing a degree in Information Systems. 
 
 			My interests lie in creating beautiful, intuitive interfaces and scalable, usable software.
+
+			<h3>About this site</h3>
+			I built this site from scratch, firstly for job search, but secondly as a fun project!
+
+			The site is built with 0 HTML templates, 0 CSS frameworks, and 0 JS libraries (-JQuery).
+
+			<div class="resume">
+				<%= link_to("Link to my resume!", discover_image('fliao_resume.pdf'), target: "_blank") %>
+			</div>
 		</div>
-		<div class="frontend title">Frontend</div>
+		<!-- <div class="frontend title">Frontend</div>
 		<div class="frontend content">
 			<div class="">
 			</div>
@@ -27,9 +42,7 @@
 			<div class="visual">
 
 			</div>
-		</div>
-		<div class="resume">
-
-		</div>
+		</div> -->
+		
 	</div>
 </div>
