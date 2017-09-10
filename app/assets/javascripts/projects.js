@@ -1,7 +1,10 @@
 // Switching slides
-function switchSlides(preview, imageUrl) {
-	$('.slide-preview').removeClass('active');
-	$(preview).addClass('active');
+function switchSlides(block, imageUrl) {
+	// console.log(preview, imageUrl, `url(${imageUrl})`);
+	$('.slide-block').removeClass('active');
+	$(block).addClass('active');
 	// switch main slide
-	$('project-slides').css('background-image', imageUrl);
+	$('.project-slides').css({
+		'background-image': `url(${imageUrl})`
+	});
 }

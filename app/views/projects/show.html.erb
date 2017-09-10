@@ -2,7 +2,9 @@
 	<h1 class="project-title"><%= @project.title %></h1>
 	<h4 class="project-subtitle"><%= @project.subtitle %></h4>
 	<div class="project-preface">
-		<div class="project-slides" style="background-image: url(<%= discover_image(@project.cover_url) %>);"></div>
+		<div class="project-slides" style="background-image: url(<%= discover_image(@project.cover_url) %>);">
+			<div class="project-slides-background"></div>
+		</div>
 		<div class="project-details">
 			<div class="details-main">
 				<div class="details-brand" style="background-image: url(<%= discover_image(@project.cover_url) %>);"></div>
@@ -14,20 +16,20 @@
 	</div>
 	<div class="project-postface">
 		<div class="project-description">
-			<div class="slide-block">
-			<div class="slide-preview" onclick="switchSlides(this, '<%= discover_image(@project.cover_url) %>');">
+			<div class="slide-block" onclick="switchSlides(this, '<%= discover_image(@project.cover_url) %>');">
+			<div class="slide-preview">
 					<div class="slide-preview-image" style="background-image: url(<%= discover_image(@project.cover_url) %>);"></div>
 				</div>
 			</div>
 			<% for project_image in @project_images %>
-				<div class="slide-block">
-					<div class="slide-preview" onclick="switchSlides(this, '<%= discover_image(project_image.img_url) %>');">
+				<div class="slide-block" onclick="switchSlides(this, '<%= discover_image(project_image.img_url) %>');">
+					<div class="slide-preview">
 						<div class="slide-preview-image" style="background-image: url(<%= discover_image(project_image.img_url) %>);"></div>
 					</div>
 				</div>
 			<% end %>
 			<script>
-				switchSlides($('.slide-preview').first().click());
+				$('.slide-block').first().click();
 			</script>
 		</div>
 		<div class="project-sidebar">
@@ -35,10 +37,10 @@
 				<h4>Skills</h4>
 				<% for project_skill in @project_skills %>
 					<% skill = project_skill.skill %>
-					<div class="details-skill">
+					<a class="details-skill" href="<%= skill.dev_link %>" target="_blank">
 						<div class="skill-image" style="background-image: url(<%= discover_image(skill.img_url) %>)"></div>
 						<div class="skill-label"><%= skill.name %></div>
-					</div>
+					</a>
 				<% end %>
 			</div>
 			<div class="sidebar-details details-misc">
@@ -67,6 +69,9 @@
 		</div>
 	</div>
 
+	<div class="mobile-show visit-desktop">
+		Visit on desktop to see if there are screenshots!
+	</div>
 	<% if false %>
 		<p id="notice"><%= notice %></p>
 		<%= link_to 'Edit', edit_project_path(@project) %> |

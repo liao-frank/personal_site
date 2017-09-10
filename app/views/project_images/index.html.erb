@@ -16,7 +16,7 @@
   <tbody>
     <% @project_images.each do |project_image| %>
       <tr>
-        <td><%= project_image.project_id %></td>
+        <td><%= project_image.project.title %></td>
         <td><%= project_image.caption %></td>
         <td><%= project_image.img_url %></td>
         <td><%= project_image.order %></td>

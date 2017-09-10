@@ -28,7 +28,7 @@ class ProjectImagesController < ApplicationController
 
     respond_to do |format|
       if @project_image.save
-        format.html { redirect_to @project_image, notice: 'Project image was successfully created.' }
+        format.html { redirect_to project_images_path, notice: 'Project image was successfully created.' }
         format.json { render :show, status: :created, location: @project_image }
       else
         format.html { render :new }
