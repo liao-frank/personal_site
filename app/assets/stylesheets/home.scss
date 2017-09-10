@@ -474,12 +474,19 @@ $red: #ff4646;
 
 	background-size: contain;
 } .about-page .introduction {
+	color: #f3f3f3;
 	white-space: pre-line;
 	text-align: center;
 } .about-page .introduction h2,
 .about-page .introduction h3, {
+	color: #fff;
 	text-transform: uppercase;
+	letter-spacing: 1px;
+
 	margin: 0 auto;
+}
+.about-page .resume {
+	text-transform: uppercase;
 }
 
 @media only screen and (max-width: 515px) {
