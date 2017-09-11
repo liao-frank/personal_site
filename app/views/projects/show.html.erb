@@ -17,13 +17,13 @@
 	</div>
 	<div class="project-postface">
 		<div class="project-description">
-			<div class="slide-block" onclick="switchSlides(this, '<%= discover_image(@project.cover_url) %>');">
+			<div class="slide-block" onclick="switchSlides(this, '<%= discover_slide(@project.cover_url) %>');">
 			<div class="slide-preview">
 					<div class="slide-preview-image" style="background-image: url(<%= discover_image(@project.cover_url) %>);"></div>
 				</div>
 			</div>
 			<% for project_image in @project_images %>
-				<div class="slide-block" onclick="switchSlides(this, '<%= discover_image(project_image.img_url) %>');">
+				<div class="slide-block" onclick="switchSlides(this, '<%= discover_slide(project_image.img_url) %>');">
 					<div class="slide-preview">
 						<div class="slide-preview-image" style="background-image: url(<%= discover_image(project_image.img_url) %>);"></div>
 						<!-- If youtube video, add white play button -->

@@ -22,6 +22,14 @@ class ApplicationController < ActionController::Base
 	end
 	helper_method :discover_image
 
+	def discover_slide(url)
+	  if /slides\/.+\.pdf\.png/.match(url)
+	    url = url.gsub('slides/', 'pdfs/').gsub!('.png', '')
+	  end
+	  discover_image(url)
+	end
+	helper_method :discover_slide
+
 	def is_url(string)
 		/$http/.match(url)
 	end
