@@ -8,6 +8,11 @@ function switchSlides(block, url) {
 
 	// detect youtube video
 	if (url.match(youtubeRe)) {
+		// unset slide
+		$('.project-slides').css({
+			'background-image': ``
+		});
+		// activate iframe
 		youtube_id = url.replace('http://img.youtube.com/vi/', '').replace('/maxresdefault.jpg', '');
 		youtube_src = `https://www.youtube.com/embed/${youtube_id}?rel=0&amp;showinfo=0`;
 		$('.project-slides iframe').addClass('active');

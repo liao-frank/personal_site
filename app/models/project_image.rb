@@ -4,6 +4,7 @@ class ProjectImage < ApplicationRecord
 
 	# Scopes
 	scope :for_project, ->(project_id) { where(id: project_id) } # TODO skills for a project id
+	scope :order_by_project, -> { joins(:project).order('projects.title ASC') }
 	scope :ordered, -> { order(order: :asc) } # TODO projects ordered by :order
 
 	# Validations

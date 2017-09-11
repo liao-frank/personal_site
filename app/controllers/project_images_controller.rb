@@ -4,7 +4,7 @@ class ProjectImagesController < ApplicationController
   # GET /project_images
   # GET /project_images.json
   def index
-    @project_images = ProjectImage.all
+    @project_images = ProjectImage.order_by_project
   end
 
   # GET /project_images/1

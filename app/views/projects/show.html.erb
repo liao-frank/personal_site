@@ -73,10 +73,11 @@
 			</div>
 		</div>
 	</div>
-
-	<div class="mobile-show visit-desktop">
-		Visit on desktop to see if there are screenshots!
-	</div>
+	<% if @project_images.length > 1 %>
+		<div class="mobile-show visit-desktop">
+			Visit on desktop to see this project's screenshots!
+		</div>
+	<% end %>
 	<% if false %>
 		<p id="notice"><%= notice %></p>
 		<%= link_to 'Edit', edit_project_path(@project) %> |

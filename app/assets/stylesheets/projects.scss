@@ -290,6 +290,9 @@ $on-hover-darken: brightness(0.7);
 .project-slides iframe {
 	position: absolute;
 	top: 0; left: 0;
+	/*transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);*/
 
 	visibility: hidden;
 	width: 100%;
@@ -521,6 +524,7 @@ $on-hover-darken: brightness(0.7);
 	background-position: center;
 }
 .mobile-show.visit-desktop {
+	margin-bottom: 10px;
 	text-align: center;
 	display: none;
 }
