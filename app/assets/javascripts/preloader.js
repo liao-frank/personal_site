@@ -30,18 +30,10 @@ function removePreloader() {
 		maxFillText('.text-fill', completion=function() {
 			switchToHome('.name');
 		});
-		daWidth('wrapper show -> max fill');
+		setTimeout(function() {
+			switchToHome(current);
+		}, 150);
 	} catch(err) {
 		console.log("Not on home page...");
 	}
-	setTimeout(function() {
-		daWidth('after 150 pl');
-	}, 150);
-	setTimeout(function() {
-		daWidth('after 200 pl');
-	}, 200);
-	setTimeout(function() {
-		daWidth('after 500 pl');
-	}, 500);
-
 }
