@@ -1,4 +1,10 @@
-function randimateText(selector, text, speed=50, frames=8) {
+function randimateText(selector, text, speed, frames) {
+	if (speed === undefined) {
+		speed = 50;
+	}
+	if (frames === undefined) {
+		frames = 8;
+	}
 	var theLetters = "abcdefghijklmnopqrstuvwxyz#%&^+=-"; // You can customize what letters it will cycle through
 	var ctnt = text; // Your text goes here
 	var increment = frames; // frames per step. Must be >2

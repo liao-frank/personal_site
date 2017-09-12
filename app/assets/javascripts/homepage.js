@@ -46,8 +46,8 @@ function maxFillText(selector, completion=function(){}) {
 function randimateTechTitle() {
 	let LENGTH = 700;
 	let FRAMES = 2;
-	randimateText('.tech.title .line.one span', 'Tech', speed=(LENGTH/FRAMES/4), frames=FRAMES);
-	randimateText('.tech.title .line.two span', 'Lover', speed=(LENGTH/FRAMES/5), frames=FRAMES);
+	randimateText('.tech.title .line.one span', 'Tech', (LENGTH/FRAMES/4), FRAMES);
+	randimateText('.tech.title .line.two span', 'Lover', (LENGTH/FRAMES/5), FRAMES);
 }
 // Switching functionality
 function switchToHomeTitle(selector) {
