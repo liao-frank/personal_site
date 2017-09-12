@@ -36,6 +36,6 @@ function removePreloader() {
 	}
 	setTimeout(function() {
 		daWidth('after 150...');
-	});
+	}, 150);
 
 }
