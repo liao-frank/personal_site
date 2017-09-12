@@ -25,13 +25,17 @@ function removePreloader() {
 	preloader_removed = true;
 	$('#wrapper').css('display', '');
 	$('#preloader').removeClass('start');
-
+	daWidth('wrapper show');
 	try {
 		maxFillText('.text-fill', completion=function() {
 			switchToHome('.name');
 		});
+		daWidth('wrapper show -> max fill');
 	} catch(err) {
 		console.log("Not on home page...");
 	}
+	setTimeout(function() {
+		daWidth('after 150...');
+	});
 
 }
