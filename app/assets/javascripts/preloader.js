@@ -2,10 +2,12 @@ var page_loaded = false;
 var preloader_show = true;
 var preloader_removed = false;
 
-$(document).ready(function() {
-	$('#wrapper').css('display', 'none');
-	$('#preloader').addClass('start');
 
+
+$(document).ready(function() {
+	$('#preloader').addClass('start');
+	// $('#content-wrapper').css('display', 'none');
+	
 	setTimeout(function() {
 		preloader_show = false;
 		if (page_loaded) {
@@ -23,9 +25,9 @@ $(window).on('load', function() {
 
 function removePreloader() {
 	preloader_removed = true;
-	$('#wrapper').css('display', '');
+	$('#content-wrapper').css('display', '');
 	$('#preloader').removeClass('start');
-	daWidth('wrapper show');
+	// daWidth('wrapper show');
 	try {
 		maxFillText('.text-fill', completion=function() {
 			switchToHome('.name');
@@ -34,6 +36,6 @@ function removePreloader() {
 			switchToHome(current);
 		}, 150);
 	} catch(err) {
-		console.log("Not on home page...");
+		// console.log("Not on home page...");
 	}
 }
