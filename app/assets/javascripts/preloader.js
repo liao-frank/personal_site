@@ -35,7 +35,13 @@ function removePreloader() {
 		console.log("Not on home page...");
 	}
 	setTimeout(function() {
-		daWidth('after 150...');
+		daWidth('after 150 pl');
 	}, 150);
+	setTimeout(function() {
+		daWidth('after 200 pl');
+	}, 200);
+	setTimeout(function() {
+		daWidth('after 500 pl');
+	}, 500);
 
 }
