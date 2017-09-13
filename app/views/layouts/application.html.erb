@@ -5,8 +5,8 @@
 		<meta name="viewport" content="width=device-width initial-scale=1 shrink-to-fit=no">
 		<%= csrf_meta_tags %>
 
-		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-		<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+		<%= stylesheet_link_tag    'application' %>
+		<%= javascript_include_tag 'application' %>
 	</head>
 
 	<body>
@@ -22,19 +22,29 @@
 					<div class="close-icon" style="background-image: url(<%= discover_image("icons/close_white.png") %>);"></div>
 				</div>
 				<script>
-					$('.hamburger-icon').on('touchstart click', function(e) {
-						e.preventDefault();
-						showMobileNav();
-					});
-					$('.close-icon').on('touchstart click', function(e) {
-						e.preventDefault();
-						hideMobileNav();
+					$(document).ready(function() {
+						$('.hamburger-icon').on('touchstart click', function(e) {
+							e.preventDefault();
+							showMobileNav();
+						});
+						$('.close-icon').on('touchstart click', function(e) {
+							e.preventDefault();
+							hideMobileNav();
+						});
+						$('#content-wrapper').on('touchstart click', function(e) {
+							// console.log('Content touched.');
+							if ($('#navbar').hasClass('active')) {
+								e.preventDefault();
+								hideMobileNav();
+							}
+						});
 					});
 				</script>
 				<div class="navlinks">
-					<%= link_to("Home", root_path) %>
-					<%= link_to("About", about_path) %>
-					<%= link_to("Projects", browse_path) %>	
+					<%= link_to("   Home", root_path) %>
+					<%= link_to("   About", about_path) %>
+					<%= link_to("   Projects", browse_path) %>
+					<%= link_to("   Resume", asset_path('fliao_resume.pdf'), target: '_blank') %>	
 				</div>
 			</div>
 			<div id="content-wrapper" style="display: none;">

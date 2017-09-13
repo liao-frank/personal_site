@@ -474,22 +474,29 @@ $red: #ff4646;
 
 	background-size: contain;
 } .about-page .introduction {
+	margin-top: 30%;
+
 	color: #f3f3f3;
 	white-space: pre-line;
 	text-align: center;
-} .about-page .introduction h2,
-.about-page .introduction h3, {
+} .about-page .introduction h2 {
 	color: #fff;
 	text-transform: uppercase;
 	letter-spacing: 1px;
 
 	margin: 0 auto;
 }
+.about-page .introduction h2:not(:first-child) {
+	margin-top: 20px;
+}
 .about-page .resume {
 	text-transform: uppercase;
 }
 
 @media only screen and (max-width: 515px) {
+	.about-page .introduction {
+		margin-top: 15%;
+	}
 	.about-page .under-construction {
 		width: 55%;
 		padding-top: 55%;
