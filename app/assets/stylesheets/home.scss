@@ -474,11 +474,16 @@ $red: #ff4646;
 
 	background-size: contain;
 } .about-page .introduction {
-	margin-top: 30%;
-
 	color: #f3f3f3;
 	white-space: pre-line;
-	text-align: center;
+	text-align: left;
+
+	position: absolute;
+	top: 45%; left: 50%;
+	width: 450px;
+	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
 } .about-page .introduction h2 {
 	color: #fff;
 	text-transform: uppercase;
@@ -495,7 +500,14 @@ $red: #ff4646;
 
 @media only screen and (max-width: 515px) {
 	.about-page .introduction {
+		position: static;
 		margin: 10% 0 20% 0;
+		width: auto;
+		top: none; left: none;
+
+		transform: none;
+		-webkit-transform: none;
+		-ms-transform: none;
 	}
 	.about-page .under-construction {
 		width: 55%;
